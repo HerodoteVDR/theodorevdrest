@@ -1,6 +1,12 @@
 ---
 title: Home
-layout: "base.njk"
+tags: "main"
+layout: "index.njk"
 ---
 
-Hello Jamstack fam !
+#### hello, I'm Theodore, I like
+
+# creative multimedia experiences
+
+
+![Theodore]("svg/logo.svg")

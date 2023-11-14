@@ -1,5 +1,138 @@
+/* === fonts === */
+:root {
+	--fontfamily-decorative: "Martel Sans", sans-serif;	
+	--fontfamily-lecture: "Istok Web", sans-serif;
+	/* font-sizes */
+	--fontsize-9: calc(9/16*1rem);
+	--fontsize-11: calc(11/16*1rem);
+	--fontsize-13: calc(13/16*1rem);
+	--fontsize-17: calc(17/16*1rem);
+	--fontsize-19: calc(19/16*1rem);
+	--fontsize-25: calc(25/16*1rem);
+	--fontsize-29: calc(29/16*1rem);
+	--fontsize-38: calc(38/16*1rem);
+	--fontsize-44: calc(44/16*1rem);
+	--fontsize-57: calc(57/16*1rem);
+	--fontsize-66: calc(66/16*1rem);
+	--fontsize-86: calc(86/16*1rem);
+	--fontsize-99: calc(99/16*1rem);
+}
+
+/* === colors === */
+:root {
+	--color-red_main: #F71B1B;
+	--color-red_light: #F95F5F;
+	--color-red_dark: #7B3740;
+	--color-red_alt: #BC3434;
+
+	--color-green_main: #008875;
+	--color-green_light: #7BBFB5;
+	--color-green_dark: #054A3E;
+	--color-green_darker: #052A25;
+
+	--color-white_purest: #F1F2EB;
+	--color-black_purest: #141412;
+
+	--color-grey_01: #A8A8A3;
+	--color-grey_02: #676763;
+	--color-grey_03: #3D3D3A;
+}
+
+/* === spacings === */
+:root {
+	--spacing_6: calc(6/16*1rem);
+	--spacing_12: calc(12/16*1rem);
+	--spacing_18: calc(18/16*1rem);
+	--spacing_24: calc(24/16*1rem);
+	--spacing_30: calc(30/16*1rem);
+	--spacing_36: calc(36/16*1rem);
+	--spacing_42: calc(42/16*1rem);
+	--spacing_48: calc(48/16*1rem);
+	--spacing_54: calc(54/16*1rem);
+	--spacing_60: calc(60/16*1rem);
+	--spacing_66: calc(66/16*1rem);
+	--spacing_72: calc(72/16*1rem);
+	--spacing_78: calc(78/16*1rem);
+	--spacing_84: calc(84/16*1rem);
+	--spacing_90: calc(90/16*1rem);
+	--spacing_96: calc(96/16*1rem);
+	--spacing_102: calc(102/16*1rem);
+	--spacing_108: calc(108/16*1rem);
+	--spacing_114: calc(114/16*1rem);
+	--spacing_120: calc(120/16*1rem);
+	--spacing_126: calc(126/16*1rem);
+	--spacing_132: calc(132/16*1rem);
+	--spacing_138: calc(138/16*1rem);
+	--spacing_144: calc(144/16*1rem);
+	--spacing_150: calc(150/16*1rem);
+	--spacing_180: calc(180/16*1rem);
+}
+
+*,
+*::before,
+*::after {
+	margin-top: 0;
+}
+
 html {
-	font-family: sans-serif;	
-	background-color: blue;
+	font-weight: 400;
+	font-size: 100%;
+	line-height: var(--spacing-24);
+	font-family: var(--fontfamily-lecture);
+	background-color: var(--color-green_darker);
+	color: var(--color-white_purest);
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.o-container {
+
+	max-width: calc(1140/16*1rem);
+	margin: 0 auto;
+	padding-left: var(--spacing_24);
+	padding-right: var(--spacing_24);
+
+}
+
+
+
+
+
+
+/* logo */
+.c-logo--container {
+	position: relative;
+
+	width: 136.24px;
+	height: 75.8px;
+
+}
+
+.c-logo--circle {
+
+	width: 75px;
+	height: 75px;
+
+	margin: 0 auto;
+	background: conic-gradient(from 0.25turn at 50% 30%, #f69d3c, 10deg, #3f87a6, 350deg, #ebf8e1);
+	border-radius: 100%;
+}
+
+.c-logo--bar {
+
+	width: 135px;
+	height: 15px;
+	background-color: var(--color-white_purest) ;
+	position: absolute;
+
+	top: 0;
+	transform: rotate(45deg);
 
 }

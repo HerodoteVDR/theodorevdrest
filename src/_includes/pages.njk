@@ -1,0 +1,6 @@
+{% extends "src/_layouts/base.njk" %}
+
+{% block content %}
+{{ content | safe }}
+<p>Published : {{ page.date.toDateString() }}</p>
+{% endblock %}
