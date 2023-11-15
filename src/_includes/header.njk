@@ -1,9 +1,24 @@
-<header>
-	{% include "src/_includes/logo.njk" %}
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/gallery">Gallery</a></li>
-		<li><a href="/news">News</a></li>
-		<li><a href="/contact">Contact</a></li>
-	</ul>
+
+<header class="o-container">
+  <nav class="c-mainnav l-grid--3cols@medium">
+    {% include "src/_components/logo.njk" %}
+    <div class="c-mainnav__container l-grid_item--2c@medium">
+      <ul class="c-mainnav__list">
+        {% for page in collections.mainPages %}
+		{% if page.data.title !== 'Contact' %}
+          <li class="c-mainnav__item">
+			{% if title == page.data.title %} <div class="c-ball_of_death"></div> {% endif %}
+            <a class="c-mainnav__link l-text__lightgrey {% if title == page.data.title %} c-page_current {% endif %}" href="{{ page.url }}">
+              {{ page.data.title }}
+            </a>
+          </li>
+		{% endif %}
+        {% endfor %}
+      </ul>
+	  <div>
+		{% include "src/_components/contact-button.njk" %}
+	  </div>
+    </div>
+    <div class="o-separator l-bgcol__green o-phoneonly"></div>
+  </nav>
 </header>

@@ -1,2 +1,28 @@
-<footer>
+<footer class="c-footer">
+	<div class="o-container">
+		<div class="o-separator l-bgcol__red"></div>
+		<nav class="c-footernav">
+			<div class="c-footernav__container l-grid_item--2c@medium">
+			<ul class="c-footernav__list">
+				{% for page in collections.mainPages %}
+				<li class="c-mainnav__item">
+					<a class="c-footernav__link l-text__darkgrey {% if title == page.data.title %} c-fpage_current {% endif %}" href="{{ page.url }}">
+					{{ page.data.title }}
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<div class="o-separator l-bgcol__green"></div>
+			</div>
+		</nav>
+		<div class="c-siteend">
+			<nav class="c-socialnav">
+				{% for socialMedia in collections.socialMedias %}
+					{% if loop.first %}<ul class="c-socialnav__list">{% endif %}
+					<li><a target="_blank" href="{{ socialMedia.url }}"><img src="{{ socialMedia.icon }}" alt="{{ socialMedia.name }}"/></a></li>	
+					{% if loop.last %}</ul>{% endif %}
+				{% endfor %}
+			</nav>
+			<p class="l-text__darkgrey" style="text-transform: uppercase; font-weight: bold;">&copy;  - Théodore van der Rest</p>
+		</div>
 </footer>
