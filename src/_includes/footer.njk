@@ -19,10 +19,10 @@
 			<nav class="c-socialnav">
 				{% for socialMedia in collections.socialMedias %}
 					{% if loop.first %}<ul class="c-socialnav__list">{% endif %}
-					<li><a target="_blank" href="{{ socialMedia.url }}"><img src="{{ socialMedia.icon }}" alt="{{ socialMedia.name }}"/></a></li>	
+				<li><a target="_blank" href="{{ socialMedia.url }}"><div class="c-socialnav__item" style="--socialmask : url({{ socialMedia.icon }})"></div></a></li>	
 					{% if loop.last %}</ul>{% endif %}
 				{% endfor %}
 			</nav>
-			<p class="l-text__darkgrey" style="text-transform: uppercase; font-weight: bold;">&copy;  - Théodore van der Rest</p>
+			<p class="l-text__darkgreen c-text__s" style="text-transform: uppercase; font-weight: bold;">&copy;  - Théodore van der Rest</p>
 		</div>
 </footer>

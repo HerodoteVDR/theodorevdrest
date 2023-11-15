@@ -1,8 +1,19 @@
 {% extends "src/_layouts/base.njk" %}
 
+{% set bannerImage = "/assets/img/home-banner.jpg" %}
+{% set bannerImage2 = "/assets/img/home-home.jpg" %}
+
 {% block content %}
 	<div class="o-container">
-		{{ content | safe }}
-		<img src="{{ bannerImage }}"/>
+		<div class="l-grid--3cols@medium">
+			<img class="o-fluidimage l-gap__s@large l-gap__m@medium" src="{{ bannerImage }}"/>
+			<article class="l-grid_item--2c@medium l-grid_item--1c@large">
+				<h4 class="l-text__red c-title__xs">hello I'm Théodore, I like</h4>
+				<h1 class="l-text__lightgrey c-title__l">Creative multimedia experiences</h1>
+				<p>In a nutschell, I enjoy to create engaging and interactive digital stuff, through a variety of different medias, such as web, design, animation and video-games.</p>
+			</article>
+			<div class="o-tabletonly"></div>
+			<img class="o-fluidimage l-gap__m@large l-grid_item--2c@medium l-grid_item--1c@large" src="{{ bannerImage2 }}"/>
+		</div>
 	</div>
 {% endblock %}
