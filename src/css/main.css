@@ -113,6 +113,8 @@ p {
 	padding: 0;
 }
 
+/* CONTAINERS AND PAGESCTIONS */
+
 .o-container {
 	max-width: calc(1140/16*1rem);
 	margin: 0 auto;
@@ -120,6 +122,21 @@ p {
 	padding-right: var(--spacing_24);
 }
 
+.c-pagesection {
+	padding-bottom: var(--spacing_120);
+}
+
+@media all and (min-width: calc(750/16*1rem)){
+	.c-pagesection {
+		padding-bottom: var(--spacing_90);
+	}
+}
+
+@media all and (min-width: calc(1050/16*1rem)){
+	.c-pagesection {
+		padding-bottom: var(--spacing_60);
+	}
+}
 /* === TEXT === */
 .l-text__white {
 	color: var(--color-white_purest);
@@ -143,7 +160,10 @@ p {
 	color: var(--color-green_main);
 }
 .l-text__darkgreen {
-	color: var(--color-green_dark)
+	color: var(--color-green_dark);
+}
+.l-text__lightgreen {
+	color: var(--color-green_light);
 }
 
 .c-text__s {
@@ -157,11 +177,18 @@ p {
 	line-height: var(--spacing_24);
 }
 
+.c-text__xxl {
+	font-size: var(--fontsize-44);
+	line-height: var(--spacing_48);
+}
+
 @media all and (min-width: calc(750/16*1rem)){
 	.c-text__m {
-		font-family: var(--fontfamily-decorative);
 		font-size: var(--fontsize-19);
-		line-height: var(--spacing_24);
+	}
+	.c-text__xxl {
+		font-size: var(--fontsize-57);
+		line-height: var(--fontsize-66);
 	}
 }
 
@@ -362,7 +389,7 @@ p {
 @media all and (min-width: calc(1050/16*1rem)){
 	.c-mainnav {
 		padding-top: var(--spacing_66);
-		padding-bottom: var(--spacing_210);
+		padding-bottom: var(--spacing_180);
 	}
 	.c-mainnav__container {
 		display: grid;
@@ -387,6 +414,8 @@ p {
 		justify-content: space-between;
 		width: calc(100/3*1%);
 		margin: 0 auto;
+		padding-left: var(--spacing_12);
+		padding-right: var(--spacing_12);
 		padding-bottom: var(--spacing_60);
 	}
 }
@@ -487,6 +516,11 @@ p {
 }
 
 @media all and (min-width: calc(750/16*1rem)) {
+	.l-grid--2cols\@medium {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		column-gap: var(--spacing_24);
+	}
 	.l-grid--3cols\@medium {
 		display: grid;
 		grid-template-columns: repeat(3,1fr);
@@ -504,6 +538,11 @@ p {
 }
 
 @media all and (min-width: calc(1050/16*1rem)) {
+	.l-grid--2cols\@large {
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		column-gap: var(--spacing_24);
+	}
 	.l-grid--3cols\@large {
 		display: grid;
 		grid-template-columns: repeat(3,1fr);
@@ -540,6 +579,66 @@ p {
 	}
 }
 
+
+/* === PADDINGS LAYOUT === */
+
+@media all and (max-width: calc(750/16*1rem)){
+	.l-padding__xxs\@small {
+		padding-bottom: var(--spacing_6);	
+	}
+	.l-padding__xs\@small {
+		padding-bottom: var(--spacing_12)
+	}
+	.l-padding__s\@small {
+		padding-bottom: var(--spacing_18);
+	}
+	.l-padding__m\@small {
+		padding-bottom: var(--spacing_30);
+	}
+	.l-padding__l\@small {
+		padding-bottom: var(--spacing_60);
+	}
+	.l-padding__xl\@small {
+		padding-bottom: var(--spacing_72);
+	}
+	.l-padding__xxl\@small {
+		padding-bottom: var(--spacing_120);
+	}
+}
+
+@media all and (min-width: calc(750/16*1rem)){
+	.l-padding__none\@medium {
+		padding: 0;
+	}
+	.l-padding__xxs\@medium {
+		padding-bottom: var(--spacing_6);	
+	}
+	.l-padding__xs\@medium {
+		padding-bottom: var(--spacing_12)
+	}
+	.l-padding__s\@medium {
+		padding-bottom: var(--spacing_18);
+	}
+	.l-padding__m\@medium {
+		padding-bottom: var(--spacing_30);
+	}
+	.l-padding__l\@medium {
+		padding-bottom: var(--spacing_60);
+	}
+	.l-padding__xl\@medium {
+		padding-bottom: var(--spacing_72);
+	}
+	.l-padding__xxl\@medium {
+		padding-bottom: var(--spacing_120);
+	}
+}
+
+
+@media all and (min-width: calc(1050/16*1rem)){
+	.l-padding__none\@large {
+		padding: 0;
+	}
+}
 /* === EXCEPTIONS */
 
 @media all and (min-width: calc(750/16*1rem)){
@@ -562,7 +661,13 @@ p {
 	.o-tabletonly {
 		display: none;
 	}
+
+	.c-huge_banner_text__container {
+		transform: translate(0, calc(100/3*-1%));
+	}
 }
+
+
 
 /* === IMAGES === */
 .o-fluidimage {
@@ -573,4 +678,19 @@ p {
 	height: auto;
 	max-width: 100%;
 	width: 100%;
+}
+
+
+/* === BANNER === */
+
+.c-banner::after {
+	position: absolute;
+	overflow-x: hidden;
+	content: "";
+	left: 0;
+	transform: translateY(var(--spacing_60));
+	width: 100vw;
+	height: calc(400/16*1rem);
+	z-index: -1;
+	background: linear-gradient(var(--color-green_darker), var(--color-red_main));
 }
