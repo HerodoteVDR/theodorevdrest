@@ -682,15 +682,21 @@ p {
 
 
 /* === BANNER === */
-
 .c-banner::after {
-	position: absolute;
-	overflow-x: hidden;
-	content: "";
-	left: 0;
-	transform: translateY(var(--spacing_60));
-	width: 100vw;
-	height: calc(400/16*1rem);
-	z-index: -1;
-	background: linear-gradient(var(--color-green_darker), var(--color-red_main));
+		position: absolute;
+		overflow-x: hidden;
+		content: "";
+		left: 0;
+		height: calc(400/16*1rem);
+		width: 100vw;
+		background: linear-gradient(var(--color-green_darker), var(--color-red_main));
+		z-index: -1;
+		transform: translateY(calc(470/16*-3rem));
+	}
+
+@media all and (min-width:calc(750/16*1rem)){
+	.c-banner::after {
+		transform: translateY(var(--spacing_60));
+	}
 }
+
