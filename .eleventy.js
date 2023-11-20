@@ -30,6 +30,19 @@ module.exports = function(eleventyConfig) {
 		];
 	});
 
+	eleventyConfig.addFilter("date", function (date, format) {
+		var date = new Date(date);
+		switch (format) {
+			case 'YYYY':
+				var year = date.getFullYear();
+				return year;
+				break;
+			default:
+				return date;
+				break;
+		}
+	});
+
 	return {
 		dir: {
 			input: "src",
@@ -37,4 +50,3 @@ module.exports = function(eleventyConfig) {
 		},
 	}
 }
-

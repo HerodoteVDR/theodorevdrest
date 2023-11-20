@@ -23,6 +23,6 @@
 					{% if loop.last %}</ul>{% endif %}
 				{% endfor %}
 			</nav>
-			<p class="l-text__darkgreen c-text__s" style="text-transform: uppercase; font-weight: bold;">&copy;  - Théodore van der Rest</p>
+			<p class="l-text__darkgreen c-text__s" style="text-transform: uppercase; font-weight: bold;">&copy; <time datetime="{{ page.date | date('YYYY') }}">{{ page.date | date('YYYY') }}</time>  - Théodore van der Rest</p>
 		</div>
 </footer>
