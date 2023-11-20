@@ -168,18 +168,18 @@ p {
 
 .c-text__s {
 	font-size: var(--fontsize-13);
-	line-height: var(--spacing_18);
+	line-height: var(--spacing_24);
 }
 
 .c-text__m {
 	font-family: var(--fontfamily-decorative);
 	font-size: var(--fontsize-17);
-	line-height: var(--spacing_24);
+	line-height: var(--spacing_30);
 }
 
 .c-text__xxl {
 	font-size: var(--fontsize-44);
-	line-height: var(--spacing_48);
+	line-height: var(--spacing_54);
 }
 
 @media all and (min-width: calc(750/16*1rem)){
@@ -209,7 +209,7 @@ p {
 	font-size: var(--fontsize-29);
 	line-height: var(--spacing_36);
 	font-weight: bold;
-	padding-bottom: var(--spacing_12);
+	padding-bottom: var(--spacing_30);
 }
 
 .c-title__l {
@@ -697,8 +697,6 @@ p {
 	}
 }
 
-
-
 /* === IMAGES === */
 .o-fluidimage {
 	outline: var(--spacing_12) solid var(--color-white_purest);
@@ -728,4 +726,33 @@ p {
 	.c-banner::after {
 		transform: translateY(var(--spacing_60));
 	}
+}
+
+/* === WORK === */
+.c-work__image::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	height: 0;
+	width: 100%;
+	height: 100%;
+	background-color: red;
+}
+
+.c-work__image {
+	margin-top: var(--spacing_30);
+}
+
+.c-work__link > h3 {
+	transition: all 0.1s ease-out;
+}
+.c-work__link > h3 > strong {
+	transition: all 0.1s ease-out;
+}
+.c-work__link:hover > h3 > strong {
+	text-decoration: underline;
+	color: var(--color-red_main);
+}
+.c-work__link:hover > h3 {
+	color: var(--color-red_main);
 }

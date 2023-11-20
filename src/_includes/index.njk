@@ -19,7 +19,7 @@
 				{% for experience in experiences %}
 				{% if loop.first %}<ul class="l-grid_item--2c@medium l-grid--2cols@large">{% endif %}
 					<li class="l-padding__l@small l-padding__l@medium l-padding__l@large">
-						<h2 class="l-text__lightgreen c-title__m">{{ experience.title }}</h2>
+						<h2 class="l-text__lightgreen c-title__m l-padding__xs@small l-padding__xs@medium l-padding__xs@large">{{ experience.title }}</h2>
 						<div class="l-padding__m@small l-padding__m@medium l-padding__m@large">
 							<div class="o-separator l-bgcol__darkred"></div>
 						</div>
@@ -29,7 +29,7 @@
 				{% endfor %}
 			</div>
 		</section>
-		<div class="l-padding__m@large l-padding__l@medium l-padding__l@small">
+		<div class="l-padding__m@large">
 			{% include "src/_components/big-contact.njk" %}
 		</div>
 	</div>

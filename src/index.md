@@ -2,6 +2,14 @@
 title: Home
 layout: "index.njk"
 importance: 1
+
+firstimage: "/assets/img/home-banner.jpg"
+secondimage: "/assets/img/home-home.jpg"
+smalltitle: "hello I'm Théodore, I like"
+bigtitle: "Creative multimedia experiences"
+smalldescription: "In a nutschell, I enjoy to create engaging and interactive digital stuff, through a variety of different medias, such as web, design, animation and video-games."
+bigdescription: "Enthusiasm, humour, adaptibility and a broad perspective shape my way of working"
+
 experiences:
   - title: 'Web'
     desc: 'In est ante in nibh mauris cursus mattis molestie a. Cursus euismod quis viverra nibh cras.'

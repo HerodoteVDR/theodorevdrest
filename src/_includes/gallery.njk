@@ -1,5 +1,34 @@
 {% extends "src/_layouts/base.njk" %}
-
 {% block content %}
-	{{ content | safe }}
+	<div class="o-container">
+		<section class="c-pagesection">
+			{% include "src/_components/banner.njk" %}
+		</section>
+		<section class="c-pagesection">
+		{% for work in collections.works %}
+		{% set bannerimg = work.data.image %}
+		{% if loop.first %}<ul>{% endif %}
+			<li>
+				<article class="l-grid--3cols@large l-padding__l@small l-padding__xl@medium l-padding__xl@large">
+					<a class="c-work__link l-grid_item--2c@large" href="https://{{ work.data.redirect }}">
+						{% for cat in work.data.categories %}
+						{% if loop.first %}<ul style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px">{% endif %}
+							<li>
+								<h4 class="c-title__xs l-text__lightgreen" style="display: flex;"><p class="l-text__red">#</p>{{ cat }}{% if not loop.last %},{% endif %}</h4>
+							</li>
+						{% if loop.last %}</ul>{% endif %}
+						{% endfor %}
+						<h3 class="c-title__m l-text__white"><strong class="l-text__green">{{ work.data.name }}</strong>, {{ work.data.introduction }}</h3>
+						<p class="c-text__m l-text__lightgrey l-padding__s@small l-padding__m@medium l-padding__none@large">{{ work.data.resume }}</p>
+					</a>
+					{% if bannerimg %}
+						{% myImage "src/"+bannerimg, work.data.alt, "(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+					{% endif %}
+				</article>
+			</li>
+		{% if loop.last %}</ul>{% endif %}
+		{% endfor %}
+		</section>
+		{{ content | safe }}
+	</div>	
 {% endblock %}

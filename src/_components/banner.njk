@@ -4,14 +4,14 @@
 			</div>
 			<div class="l-grid--2cols@medium l-grid_item--2c@medium l-padding__xl@small l-padding__l@medium l-padding__none@large">
 				<article class="l-grid_item--2c@medium l-grid_item--1c@large l-padding__xl@small l-padding__l@medium">
-					<h4 class="l-text__red c-title__xs">hello I'm Théodore, I like</h4>
-					<h1 class="l-text__lightgrey c-title__l">Creative multimedia experiences</h1>
-					<p>In a nutschell, I enjoy to create engaging and interactive digital stuff, through a variety of different medias, such as web, design, animation and video-games.</p>
+					<h4 class="l-text__red c-title__xs">{{ smalltitle }}</h4>
+					<h1 class="l-text__lightgrey c-title__l">{{ bigtitle }}</h1>
+					<p>{{ smalldescription }}<p>
 				</article>
+				{% myImage firstimage, "banner", "(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
 				<img class="o-fluidimage l-gap__m@large l-grid_item--2c@medium l-grid_item--1c@large" src="{{ bannerImage2 }}"/>
 			</div>
 			<div class="l-grid_item--3c@medium l-grid_item--2c@large c-huge_banner_text__container">
-		<p class="l-text__lightgreen c-text__xxl">Enthusiasm, humour, adaptibility and a broad perspective shape my way of working</p>
+		<p class="l-text__lightgreen c-text__xxl">{{ bigdescription }}</p>
 	</div>
 </div>
-
