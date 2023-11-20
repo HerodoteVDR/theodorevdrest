@@ -233,8 +233,6 @@ p {
 
 /* === NAVIGATION === */
 
-/* header */
-
 .c-mainnav {
 	padding-top: var(--spacing_90);
 	padding-bottom: var(--spacing_90);
@@ -731,4 +729,3 @@ p {
 		transform: translateY(var(--spacing_60));
 	}
 }
-
