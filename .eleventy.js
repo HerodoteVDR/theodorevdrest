@@ -112,7 +112,8 @@ module.exports = function(eleventyConfig) {
 			console.log("Debug: Generated image HTML:", imageHTML);
 
 			return imageHTML;
-		} catch (error) {
+		} 
+		catch (error) {
 			console.error("Error in myImage shortcode:", error);
 			return "";
 		}

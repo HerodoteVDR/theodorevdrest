@@ -13,6 +13,7 @@
 	{% set image = work.data.image %}
 	<p>{{ image | dump }}</p>
 	{% set alt = work.data.alt %}
-	{% myImage "src/assets/img/work/grouper.jpg", "alt","(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+	<p>{{ image }}</p>
+	{% myImage image, "alt","(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
 </article>
 
