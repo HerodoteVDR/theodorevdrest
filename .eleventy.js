@@ -2,9 +2,6 @@ const Image = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
 
-	eleventyConfig.addPassthroughCopy("./src/css/");
-	eleventyConfig.addWatchTarget("./src/css/");
-
 	eleventyConfig.addPassthroughCopy("./src/assets/");
 	eleventyConfig.addWatchTarget("./src/assets/");
 
@@ -37,20 +34,28 @@ module.exports = function(eleventyConfig) {
 		return collection.getFilteredByGlob("./src/gallery/*.md");
 	});
 
+	// filters
+	eleventyConfig.addFilter("limit", function (array, limit) {
+		return array.slice(0, limit);
+	});
+
 	eleventyConfig.addFilter("date", function (date, format) {
 		var date = new Date(date);
 		switch (format) {
 			case 'YYYY':
 				var year = date.getFullYear();
 				return year;
-				break;
+			break;
 			default:
 				return date;
-				break;
+			break;
 		}
 	});
 
+/*	
+
 	eleventyConfig.addShortcode("myImage", async function(src, alt, sizes) {
+		console.log(src);
 		let metadata = await Image(src, {
 			widths: [300, 600],
 			formats: ["webp"],
@@ -68,6 +73,50 @@ module.exports = function(eleventyConfig) {
 
 		return Image.generateHTML(metadata, imageAttributes);
 	});
+	*/
+
+	
+
+
+
+
+
+	eleventyConfig.addShortcode("myImage", async function(src, alt, sizes) {
+		try {
+			console.log("Debug: myImage shortcode called with src:", src);
+
+			if (!src) {
+				console.error("Error: `src` is a required argument to the eleventy-img utility.");
+				return "";
+			}
+
+			let metadata = await Image(src, {
+				widths: [300, 600],
+				formats: ["webp"],
+				outputDir: "./dist/assets/img/output",
+				urlPath: "/assets/img/output/",
+			});
+
+			console.log("Debug: Generated image metadata:", metadata);
+
+			let imageAttributes = {
+				alt,
+				sizes,
+				loading: "lazy",
+				decoding: "async",
+				class: "o-fluidimage"
+			};
+
+			const imageHTML = Image.generateHTML(metadata, imageAttributes);
+
+			console.log("Debug: Generated image HTML:", imageHTML);
+
+			return imageHTML;
+		} catch (error) {
+			console.error("Error in myImage shortcode:", error);
+			return "";
+		}
+	});
 
 	return {
 		dir: {
@@ -75,4 +124,6 @@ module.exports = function(eleventyConfig) {
 			output: "dist",
 		},
 	}
+
+
 }

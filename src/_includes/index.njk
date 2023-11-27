@@ -1,7 +1,5 @@
 {% extends "src/_layouts/base.njk" %}
 
-{% set bannerImage = "/assets/img/home-banner.jpg" %}
-{% set bannerImage2 = "/assets/img/home-home.jpg" %}
 
 {% block content %}
 	<div class="o-container">
@@ -10,6 +8,20 @@
 		</section>
 		<section class="c-pagesection" style="margin-bottom: 42px;">
 			<div class="o-separator l-bgcol__darkred"></div>
+		</section>
+		<section class="c-pagesection">
+			<h4 class="l-text__red c-title__xs">latest projects</h4>
+			<div>
+				{% for work in collections.works | limit(3) %}
+				{% if loop.first %}<ul class="c-latest__list">{% endif %}
+					<li class="c-latest__item c-latest__item{{ loop.index }}">
+						<article class="c-latest__container">
+							{% myImage work.data.image, work.data.alt,"(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+						</article>
+					</li>
+				{% if loop.last %}</ul>{% endif %}
+				{% endfor %}
+			</div>
 		</section>
 		<section class="c-pagesection">
 			<div class="l-grid--3cols@medium">
