@@ -11,28 +11,31 @@
 		</section>
 		<section class="c-pagesection">
 			<h4 class="l-text__red c-title__xs">latest projects</h4>
+				<p class="o-coordinates"></p>
 			<div>
 				{% for work in collections.works | limit(3) %}
 				{% if loop.first %}<ul class="c-latest__list">{% endif %}
-					<li class="c-latest__item c-latest__item{{ loop.index }}" id="card-{{ loop.index }}">
-						<div class="c-latest__container">
+					<li class="c-latest__item c-latest__item{{ loop.index }} o-perspective" id="card-{{ loop.index }}">
+						<div class="c-latest__container o-perspective__inner">
 							{% myImage work.data.image, work.data.alt,"(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
 						</div>
 					</li>
 				{% if loop.last %}</ul>{% endif %}
 				{% endfor %}
 
+				<button class="c-button__next">Next</button>
+				<button class="c-button__prev">Prev</button>
+
 				{% for work in collections.works | limit(3) %}
-				{% if loop.first %} <ul> {% endif %}
-				<li>
-					<article class="">
+				{% if loop.first %} <ul class="c-latestparaph__list"> {% endif %}
+				<li class="c-latestparaph__item">
+					<article class="c-latestparaph__container">
 						{% include "src/_components/workinfos.njk" %}
 						<a class="c-button__contact c-mainnav__link" href="https://{{ work.data.redirect }}"><div class="c-button__contact__container"><p>Visit the website</p><div class="o-background__conic"></div></div></a>
 					</article>
 				</li>
 				{% if loop.last %} </ul> {% endif %}
 				{% endfor %}
-
 			</div>
 		</section>
 		<section class="c-pagesection">

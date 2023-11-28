@@ -669,6 +669,9 @@ p {
 	.l-padding__none\@large {
 		padding: 0;
 	}
+	.l-padding__s\@large {
+		padding-bottom: var(--spacing_18);
+	}
 	.l-padding__m\@large {
 		padding-bottom: var(--spacing_30);
 	}
@@ -785,6 +788,7 @@ p {
 	width: 250%;
 	transition: width 0.2s ease-out;
 	z-index: 0;
+	filter: brightness(calc(100/3*1%));
 }
 
 
@@ -831,10 +835,12 @@ p {
 
 .c-latest__item.previous {
 	z-index: 3;
+	filter: brightness(calc(100/3*2%));
 }
 .c-latest__item.selected {
 	z-index: 6;
 	width: 300%;
+	filter: brightness(100%);
 }
 
 .c-latest__item.selected .c-latest__container::after {
@@ -858,3 +864,11 @@ p {
 		width: 200%;
 	}
 }
+
+/* === PERSPECTIVE === */
+
+.o-perspective {
+	perspective: 5000px;
+	transition: transform 0.7s width 0.2s ease-out;
+}
+
