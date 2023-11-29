@@ -16,14 +16,14 @@ for (let i = 0; i < cards.length; i++) {
 
 var currentButton=0;
 
-buttonNext.addEventListener('click', function() {
-	if(currentButton>=cards.length) currentButton=0;
-	changeSelected(cards[currentButton++], cards);
+buttonNext.addEventListener('click', function () {
+    currentButton = (currentButton + 1) % cards.length;
+    changeSelected(cards[currentButton], cards);
 });
 
-buttonPrev.addEventListener('click', function() {
-	if(currentButton<0) currentButton=cards.length-1;
-	changeSelected(cards[currentButton--], cards);
+buttonPrev.addEventListener('click', function () {
+    currentButton = (currentButton - 1 + cards.length) % cards.length;
+    changeSelected(cards[currentButton], cards);
 });
 
 // now, every time we select a card we unselect every card, and select the new one
