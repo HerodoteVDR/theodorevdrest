@@ -1,6 +1,4 @@
 {% extends "src/_layouts/base.njk" %}
-
-
 {% block content %}
 	<div class="o-container">
 		<section class="c-pagesection">
@@ -10,8 +8,10 @@
 			<div class="o-separator l-bgcol__darkred"></div>
 		</section>
 		<section class="c-pagesection">
-			<h4 class="l-text__red c-title__xs">latest projects</h4>
-				<p class="o-coordinates"></p>
+			<div style="display: flex; flex-direction: row; justify-content: space-between">
+				<h4 class="l-text__red c-title__xs">discover my latest projects</h4>
+				<h4 class="c-title__xs"><a class="o-link" href="/gallery">see all</a></h4>
+			</div>
 			<div>
 				{% for work in collections.works | limit(3) %}
 				{% if loop.first %}<ul class="c-latest__list ">{% endif %}
@@ -27,8 +27,8 @@
 					<button class="c-latest__button c-button__next"><div class="inner"></div></button>
 				</div>
 				{% for work in collections.works | limit(3) %}
-				{% if loop.first %} <ul class="c-latestparaph__list l-grid--3cols@large	l-gap__m@large"> {% endif %}
-				<li class="c-latestparaph__item l-grid_item--2-3@large">
+				{% if loop.first %} <ul class="c-latestparaph__list l-grid--3cols@large	l-gap__m@large">{% endif %}
+				<li class="c-latestparaph__item l-grid_item--2-3@large l-padding__l@large">
 					<article class="c-latestparaph__container ">
 						{% include "src/_components/workinfos.njk" %}
 						<a class="c-button__contact c-mainnav__link" href="https://{{ work.data.redirect }}"><div class="c-button__contact__container"><p>Visit the website</p><div class="o-background__conic"></div></div></a>

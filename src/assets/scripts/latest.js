@@ -5,6 +5,7 @@ var descriptions = document.getElementsByClassName('c-latestparaph__item');
 
 cards[0].classList.add('selected');
 cards[1].classList.add('previous');
+descriptions[0].classList.add('selected');
 var currentButton=0;
 
 var changeSelectedHandler = function (card) {

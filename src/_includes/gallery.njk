@@ -18,7 +18,9 @@
 					{% set bannerimg = work.data.image %}
 					{% if bannerimg %}
 					<div class="l-gap__s@large">
-						{% myImage bannerimg, work.data.alt, "(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+						<a href="https://{{ work.data.redirect }}">
+							{% myImage bannerimg, work.data.alt, "(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+						</a>
 					</div>
 					{% endif %}
 				</article>

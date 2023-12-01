@@ -31,7 +31,19 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addCollection("works", function (collection) {
-		return collection.getFilteredByGlob("./src/gallery/*.md");
+		return collection.getFilteredByGlob("./src/gallery/*.md").sort(function(a, b) {
+			const dateA = new Date(a.data.date);
+			const dateB = new Date(b.data.date);
+			return dateB - dateA;	
+		});
+	});
+
+	eleventyConfig.addCollection("news", function (collection) {
+		return collection.getFilteredByGlob("./src/news/*.md").sort(function(a, b) {
+			const dateA = new Date(a.data.date);
+			const dateB = new Date(b.data.date);
+			return dateB - dateA;	
+		});
 	});
 
 	// filters

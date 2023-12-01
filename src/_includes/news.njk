@@ -1,7 +1,12 @@
 {% extends "src/_layouts/base.njk" %}
-
 {% block content %}
 	<div class="o-container">
-		{{ content | safe }}
+		{% for new in collections.news %}
+		{% if loop.first %}<ul>{% endif %}
+			<li>
+				{{ new.data.emoji }}
+			</li>
+		{% if loop.last %}</ul>{% endif %}
+		{% endfor %}
 	</div>
 {% endblock %}

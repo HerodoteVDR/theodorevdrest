@@ -499,6 +499,8 @@ p {
 	max-width: 100%;
 	width: 136.24px;
 	height: auto;
+
+	transform: scale(calc(100/3*2%));
 }
 
 .c-logo--circle {
@@ -684,6 +686,9 @@ p {
 	.l-padding__m\@large {
 		padding-bottom: var(--spacing_30);
 	}
+	.l-padding__l\@large {
+		padding-bottom: var(--spacing_60);
+	}
 	.l-padding__xl\@large {
 		padding-bottom: var(--spacing_90);
 	}
@@ -732,6 +737,14 @@ p {
 	width: 100%;
 }
 
+.o-link {
+	color: var(--color-grey_01);
+	text-decoration: underline;
+}
+
+.o-link:hover {
+	color: var(--color-white_purest);
+}
 
 /* === BANNER === */
 
@@ -866,7 +879,8 @@ p {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	gap: var(--spacing_30);
+	gap: var(--spacing_18);
+	padding: var(--spacing_12);
 }
 
 
@@ -881,9 +895,7 @@ p {
 	mask-repeat: no-repeat;
 	height: var(--spacing_36);
 	width: var(--spacing_36);
-
-	margin-top: var(--spacing_30);
-	margin-bottom: var(--spacing_18);
+	margin: var(--spacing_30);
 }
 
 .c-latest__button > .inner {
