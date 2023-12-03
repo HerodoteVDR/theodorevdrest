@@ -1,12 +1,19 @@
 {% extends "src/_layouts/base.njk" %}
 {% block content %}
 	<div class="o-container">
+		<section class="c-pagesection">
 		{% for new in collections.news %}
-		{% if loop.first %}<ul>{% endif %}
-			<li>
-				{{ new.data.emoji }}
+		{% if loop.first %}<ul class="c-news__list l-grid--3cols@large">{% endif %}
+			<li class="c-news__item l-grid_item--2-3@large">
+				<a class="c-news__link" href="{{ new.url }}">
+					<article class="c-news__container">
+						<h4 class="c-title__xs l-text__lightgrey">{{ new.data.date | date("MONTHDDYYYY") }}</h4>
+						<h2 class="c-title__s">{{ new.data.emoji }} · {{ new.data.title }}</h2>
+					</article>
+				</a>
 			</li>
 		{% if loop.last %}</ul>{% endif %}
 		{% endfor %}
+		</section>
 	</div>
 {% endblock %}

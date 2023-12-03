@@ -1,8 +1,8 @@
 ---
-title: "Blog is live !"
+title: "How to be ecoresponsable"
 layout: "newpost.njk"
-date: 2023-12-01
-emoji: 🚀
+date: 2023-10-08
+emoji: 🌿
 updated: false
 archived: false
 ---

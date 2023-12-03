@@ -53,10 +53,14 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addFilter("date", function (date, format) {
 		var date = new Date(date);
+		var year = date.getFullYear();
+		var month = date.toLocaleString('en-US', { month: 'long' });
+		var day = date.toLocaleString('en-US', { day: '2-digit' });
 		switch (format) {
 			case 'YYYY':
-				var year = date.getFullYear();
 				return year;
+			case 'MONTHDDYYYY':
+				return `${month} ${day}, ${year}` ; 
 			break;
 			default:
 				return date;
@@ -88,11 +92,6 @@ module.exports = function(eleventyConfig) {
 	*/
 
 	
-
-
-
-
-
 	eleventyConfig.addShortcode("myImage", async function(src, alt, sizes) {
 		try {
 			console.log("Debug: myImage shortcode called with src:", src);
