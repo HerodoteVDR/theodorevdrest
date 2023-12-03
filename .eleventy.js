@@ -1,4 +1,5 @@
 const Image = require("@11ty/eleventy-img");
+const Sharp = require('sharp');
 
 module.exports = function(eleventyConfig) {
 
@@ -68,51 +69,42 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
-/*	
-
-	eleventyConfig.addShortcode("myImage", async function(src, alt, sizes) {
-		console.log(src);
-		let metadata = await Image(src, {
-			widths: [300, 600],
-			formats: ["webp"],
-			outputDir: "./dist/assets/img/output",
-			urlPath: "/assets/img/output/",
-		});
-
-		let imageAttributes = {
-			alt,
-			sizes,
-			loading: "lazy",
-			decoding: "async",
-			class: "o-fluidimage"
-		};
-
-		return Image.generateHTML(metadata, imageAttributes);
-	});
-	*/
-
-	
-	eleventyConfig.addShortcode("myImage", async function(src, alt, sizes) {
+	eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSize, bigSize) {
 		try {
-			console.log("Debug: myImage shortcode called with src:", src);
+
+			 console.log("Debug: myImage shortcode called with src:", src);
 
 			if (!src) {
 				console.error("Error: `src` is a required argument to the eleventy-img utility.");
 				return "";
 			}
 
-			let metadata = await Image(src, {
-				widths: [300, 600],
-				formats: ["webp"],
-				outputDir: "./dist/assets/img/output",
-				urlPath: "/assets/img/output/",
-			});
+			const resizedImageBuffer = await Promise.all([
+				resizeImage(src, smallSize[0], smallSize[1], "cover"),
+				resizeImage(src, midSize[0], midSize[1], "cover"),
+				resizeImage(src, bigSize[0], bigSize[1], "cover"),
+			]);
+
+			const metadata = await Promise.all(
+				resizedImageBuffer.map(async buffer => {
+					return await Image(buffer, {
+						formats: ["webp"],
+						outputDir: "./dist/assets/img/output",
+						urlPath: "/assets/img/output/",
+					});
+				})
+			);
 
 			console.log("Debug: Generated image metadata:", metadata);
 
+			const srcset = metadata.map((data, index) => {
+				const width = [smallSize, midSize, bigSize][index][0];
+				return `${data.webp[0].url} ${width}w`;
+			}).join(', ');
+
 			let imageAttributes = {
 				alt,
-				sizes,
+				sizes: `(min-width: 1050px) 1050px, (min-width: 750px) 750px, 100vw`,
 				loading: "lazy",
 				decoding: "async",
 				class: "o-fluidimage"
@@ -120,10 +112,25 @@ module.exports = function(eleventyConfig) {
 
 			const imageHTML = Image.generateHTML(metadata, imageAttributes);
 
+			const sizes = `(min-width: 1050px) ${bigSize[0]}px, (min-width: 750px) ${midSize[0]}px, ${smallSize[0]}px`;
+
+			const imageHTML = 
+				`<picture> 
+					<source media="(min-width: 1050px)" srcset="${metadata[2].webp[0].url}">
+					<source media="(min-width: 750px)" srcset="${metadata[1].webp[0].url}">
+					<img
+						class="${ imageAttributes.class }" 
+						alt="${ imageAttributes.alt }" 
+						loading="${ imageAttributes.loading }
+						decoding="${ imageAttributes.decoding }" 
+						src="${ metadata[0].webp[0].url }"
+					/>
+				</picture>`;
 			console.log("Debug: Generated image HTML:", imageHTML);
 
 			return imageHTML;
 		} 
+
 		catch (error) {
 			console.error("Error in myImage shortcode:", error);
 			return "";
@@ -138,4 +145,20 @@ module.exports = function(eleventyConfig) {
 	}
 
 
+}
+
+async function resizeImage(src, width, height, mode) {
+    return await Sharp(src)
+        .resize({ width: width, height: height, fit: mode })
+        .toBuffer();
+}
+
+function generateImageAttributes(metadata) {
+    return {
+        alt: metadata.alt,
+        sizes: '(min-width: 1050px) 1050px, (min-width: 750px) 750px, 100vw',
+        loading: "lazy",
+        decoding: "async",
+        class: "o-fluidimage"
+    };
 }

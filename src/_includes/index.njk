@@ -17,7 +17,7 @@
 				{% if loop.first %}<ul class="c-latest__list ">{% endif %}
 					<li class="c-latest__item c-latest__item{{ loop.index }} o-perspective" id="card-{{ loop.index }}">
 						<div class="c-latest__container o-perspective__inner">
-							{% myImage work.data.image, work.data.alt,"(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+							{% myImage work.data.image, work.data.alt, [750, 350], [480, 200], [350, 250] %}
 						</div>
 					</li>
 				{% if loop.last %}</ul>{% endif %}
@@ -34,7 +34,7 @@
 						<a class="c-button__contact c-mainnav__link" href="https://{{ work.data.redirect }}"><div class="c-button__contact__container"><p>Visit the website</p><div class="o-background__conic"></div></div></a>
 					</article>
 				</li>
-				{% if loop.last %} </ul> {% endif %}
+				{% if loop.last %}</ul>{% endif %}
 				{% endfor %}
 			</div>
 		</section>

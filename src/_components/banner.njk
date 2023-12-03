@@ -3,7 +3,7 @@
 <div class="c-banner l-grid--3cols@medium">
 			{% if img1 %}
 				<div class="l-padding__l@small l-gap__m@medium l-gap__s@small">
-					{% myImage img1, "banner", "(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+					{% myImage img1, "banner", [360,360], [230, 350], [400, 400] %}
 				</div>
 			{% endif %}
 			<div class="l-grid--2cols@medium l-grid_item--2c@medium l-padding__xl@small l-padding__l@medium l-padding__none@large">
@@ -14,7 +14,7 @@
 				</article>
 				{% if img2 %}
 					<div class="l-grid_item--2c@medium l-grid_item--1c@large l-gap__m@large">
-						{% myImage img2, "banner", "(min-width: 750px) 450vw, (min-width: 1050px) 750vw, 300vw" %}
+						{% myImage img2, "banner", [390, 300], [480, 300], [360, 630] %}
 					</div>
 				{% endif %}
 			</div>
