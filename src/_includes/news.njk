@@ -3,7 +3,10 @@
 	<div class="o-container">
 		<section class="c-pagesection">
 		{% for new in collections.news %}
-		{% if loop.first %}<ul class="c-news__list l-grid--3cols@large">{% endif %}
+		{% if loop.first %}
+			<ul class="c-news__list l-grid--3cols@large">
+			<li><h4 class="c-title__l l-text__red">{{ introduction }}</h4></li>
+		{% endif %}
 			<li class="c-news__item l-grid_item--2-3@large">
 				<a class="c-news__link" href="{{ new.url }}">
 					<article class="c-news__container">

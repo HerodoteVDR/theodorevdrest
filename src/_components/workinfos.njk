@@ -1,10 +1,11 @@
 {% for cat in work.data.categories %}
-{% if loop.first %}<ul style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px">{% endif %}
+{% if loop.first %}<ul class="l-padding__xs@small l-padding__xs@medium l-padding__xxs@large" style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px">{% endif %}
 <li>
-	<h4 class="c-title__xs l-text__lightgreen" style="display: flex;"><p class="l-text__red">#</p>{{ cat }}{% if not loop.last %},{% endif %}</h4>
+	<h4 class="c-title__xs l-text__lightgreen" style="display: flex; gap: 3px; padding: 0;"><p class="l-text__red">#</p>{{ cat }}{% if not loop.last %},{% endif %}</h4>
 </li>
 {% if loop.last %}</ul>{% endif %}
 {% endfor %}
-<h3 class="c-title__m l-text__white"><strong class="l-text__green">{{ work.data.name }}</strong>, {{ work.data.introduction }}</h3>
+<a targer="_blank" href="https://{{ work.data.redirect }}" class="c-work__link"><h3 class="c-title__m l-text__white"><strong class="l-text__green">{{ work.data.name }}</strong>, {{ work.data.introduction }}</h3></a>
 <p class="c-text__m l-text__lightgrey l-padding__m@small l-padding__m@medium l-padding__s@large">{{ work.data.resume }}</p>
+<a class="c-button__contact c-mainnav__link" target="_blank" href="https://{{ work.data.redirect }}"><div class="c-button__contact__container"><p>Visit the website</p><div class="o-background__conic"></div></div></a>
 

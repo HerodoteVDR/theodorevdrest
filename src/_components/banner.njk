@@ -1,13 +1,14 @@
 {% set img1 = firstimage %}
 {% set img2 = secondimage %}
+<div class="c-banner__background" ></div>
 <div class="c-banner l-grid--3cols@medium">
 			{% if img1 %}
 				<div class="l-padding__l@small l-gap__m@medium l-gap__s@small">
-					{% myImage img1, "banner", [360,360], [230, 350], [400, 400] %}
+					{% myImage img1, "banner", [400,400], [230, 350], [360, 360] %}
 				</div>
 			{% endif %}
 			<div class="l-grid--2cols@medium l-grid_item--2c@medium l-padding__xl@small l-padding__l@medium l-padding__none@large">
-				<article class="l-grid_item--2c@medium l-grid_item--1c@large l-padding__xl@small l-padding__l@medium">
+				<article class="l-grid_item--2c@medium l-grid_item--1c@large l-padding__l@small l-padding__l@medium">
 					<h4 class="l-text__red c-title__xs">{{ smalltitle }}</h4>
 					<h1 class="l-text__lightgrey c-title__l">{{ bigtitle }}</h1>
 					<p>{{ smalldescription }}<p>

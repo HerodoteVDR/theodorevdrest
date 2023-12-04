@@ -1,6 +1,18 @@
 {% extends "src/_layouts/base.njk" %}
 {% block content %}
 	<div class="o-container">
-		{{ content | safe }}
+		<section class="c-pagesection">
+			<h4 class="c-title__xs l-text__lightgreen">{{ emoji }} · {{ date | date("MONTHDDYYYY")}}</h4>
+			<h1 class="c-title__l l-text__red">{{ title }}</h1>
+			{% myImage cover, "aaa", [700, 500], [750, 375], [1200, 360], recenter %}
+		</section>
+		<section class="c-pagesection">
+			<div>
+				<div class="c-newcontent l-grid_item--2-3@large">
+					{{ content | safe }}
+				</div>
+			</div>
+		</section>
+		<a class="c-button__contact c-button__contact__big c-mainnav__link" href="/news"><div class="c-button__contact__container"><p>Return to news</p><div class="o-background__conic"></div></div></a>
 	</div>
 {% endblock %}

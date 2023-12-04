@@ -17,7 +17,7 @@
 				{% if loop.first %}<ul class="c-latest__list ">{% endif %}
 					<li class="c-latest__item c-latest__item{{ loop.index }} o-perspective" id="card-{{ loop.index }}">
 						<div class="c-latest__container o-perspective__inner">
-							{% myImage work.data.image, work.data.alt, [750, 350], [480, 200], [350, 250] %}
+							{% myImage work.data.image, work.data.alt,  [350, 250], [480, 200], [750, 350] %}
 						</div>
 					</li>
 				{% if loop.last %}</ul>{% endif %}
@@ -31,7 +31,6 @@
 				<li class="c-latestparaph__item l-grid_item--2-3@large l-padding__l@large">
 					<article class="c-latestparaph__container ">
 						{% include "src/_components/workinfos.njk" %}
-						<a class="c-button__contact c-mainnav__link" href="https://{{ work.data.redirect }}"><div class="c-button__contact__container"><p>Visit the website</p><div class="o-background__conic"></div></div></a>
 					</article>
 				</li>
 				{% if loop.last %}</ul>{% endif %}

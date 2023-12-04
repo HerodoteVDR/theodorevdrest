@@ -10,19 +10,21 @@
 		<section class="c-pagesection">
 		{% for work in collections.works | limit(3) %}
 		{% if loop.first %}<ul>{% endif %}
-			<li class="l-padding__xxl@small l-padding__xl@medium l-padding__xl@large">
+		<li class="l-padding__xxl@small l-padding__xl@medium xl-padding__l@large">
 				<article class="l-grid--3cols@large">
-					<a class="c-work__link l-grid_item--2c@large" href="https://{{ work.data.redirect }}">
-						{% include "src/_components/workinfos.njk" %}
-					</a>
 					{% set bannerimg = work.data.image %}
+					{% set recenter = work.data.recenter %}
 					{% if bannerimg %}
-					<div class="l-gap__s@large">
-						<a href="https://{{ work.data.redirect }}">
-							{% myImage bannerimg, work.data.alt, [360, 420], [750, 450], [390, 250] %}
+					<div class="l-gap__s@large l-padding__m@small l-padding__s@medium">
+						<a target="_blank" href="https://{{ work.data.redirect }}">
+							{% myImage bannerimg, work.data.alt, [390, 300], [750, 375], [360, 360], recenter %}
 						</a>
 					</div>
 					{% endif %}
+					<div class="l-grid_item--2c@large">
+						{% include "src/_components/workinfos.njk" %}
+					</div>
+
 				</article>
 			</li>
 		{% if loop.last %}</ul>{% endif %}
