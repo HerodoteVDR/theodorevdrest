@@ -10,7 +10,7 @@
 		<section class="c-pagesection">
 		{% for work in collections.works | limit(3) %}
 		{% if loop.first %}<ul>{% endif %}
-		<li class="l-padding__xxl@small l-padding__xl@medium xl-padding__l@large">
+		<li class="{% if not loop.last %} l-padding__xxl@small l-padding__xl@medium xl-padding__l@large {% endif %}">
 				<article class="l-grid--3cols@large">
 					{% set bannerimg = work.data.image %}
 					{% set recenter = work.data.recenter %}
@@ -30,5 +30,9 @@
 		{% if loop.last %}</ul>{% endif %}
 		{% endfor %}
 		</section>
+		<div class="l-padding__m@large">
+			{% include "src/_components/big-contact.njk" %}
+		</div>
+
 	</div>	
 {% endblock %}

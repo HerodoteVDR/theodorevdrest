@@ -1,7 +1,7 @@
 ---
 name: 'Reaping Town'
 introduction: 'quirky video game about death, end of study project'
-resume: 'Turpis cursus in hac habitasse platea dictumst. At urna condimentum mattis pellentesque. Enim lobortis scelerisque fermentum dui faucibus in ornare quam. Viverra vitae congue eu consequat ac felis donec. Ante metus dictum at tempor. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Leo duis ut diam quam nulla porttitor massa.'
+resume: 'I finished my cursus at IAD school with this video game project made on Unity. It was truly a blast to discover C# and Unity creating this 3D puzzle game where you have to unsolve the mystery of a nebulous village. I handled UX, Unity integration and programming.'
 image: 'src/assets/img/work/reaping_town.jpg'
 alt: 'From Reaping Town'
 redirect: 'reapingtown.netlify.app/'

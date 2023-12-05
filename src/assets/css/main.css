@@ -75,7 +75,7 @@
 }
 
 html {
-	font-weight: 200;
+	font-weight: 400;
 	font-size: 100%;
 	line-height: var(--spacing_24);
 	font-family: var(--fontfamily-lecture);
@@ -104,7 +104,7 @@ a {
 	color: var(--color-white_purest);
 }
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4, h5 {
 	font-family: var(--fontfamily-decorative);
 	padding: 0;
 	margin: 0;
@@ -178,7 +178,6 @@ p {
 }
 
 .c-text__m {
-	font-family: var(--fontfamily-decorative);
 	font-size: var(--fontsize-17);
 	line-height: var(--spacing_30);
 }
@@ -202,14 +201,19 @@ p {
 
 }
 /* === TITLES === */
-
+.c-title__xxs {
+	font-size: var(--fontsize-13);
+	line-height: var(--spacing_18);
+	padding-bottom: var(--spacing_12);
+	font-weight: 900;
+}
 .c-title__xs {
 	font-family: var(--fontfamily-lecture);
-	font-size: var(--fontsize-11);
+	font-size: var(--fontsize-13);
 	line-height: var(--spacing_18);
 	padding-bottom: var(--spacing_12);
 	text-transform: uppercase;
-	font-weight: bold;
+	font-weight: 900;
 }
 
 .c-title__s {
@@ -226,16 +230,14 @@ p {
 }
 
 .c-title__l {
-	font-weight: 200;
+	font-weight: 400;
 	font-size: var(--fontsize-38);
 	line-height: var(--spacing_42);
 	padding-bottom: var(--spacing_18);
 }
 
 @media all and (min-width: calc(750/16*1rem)){
-	.c-title__xs {
-		font-size: var(--fontsize-13);
-	}
+
 
 	.c-title__s {
 		font-size: var(--fontsize-25);
@@ -359,12 +361,14 @@ p {
 .c-socialnav__item {
 	width: var(--spacing_36);
 	height: var(--spacing_36);
+	display: block;
 	background-color: var(--color-green_dark);
 	mask: var(--socialmask);
 	-webkit-mask: var(--socialmask);
 	mask-size: cover;
 	-webkit-mask-size: cover;	
 	transition: background-color 0.1s ease-out;
+	margin-right: var(--spacing_12);
 }
 
 .c-socialnav__item:hover {
@@ -1094,7 +1098,7 @@ p {
 	font-size: var(--fontsize-19);
 	color: lightgrey;
 	line-height: var(--spacing_30);
-	padding-bottom: var(--spacing_60);
+	padding-bottom: var(--spacing_30);
 }
 
 .c-newcontent > p > a {
@@ -1134,3 +1138,31 @@ p {
 
 }
 
+.c-newcontent > audio {
+	margin-top: var(--spacing_24);
+	margin-bottom: var(--spacing_24);
+	width: 100%;
+	border-radius: var(--spacing_24);
+	background-color: var(--color-grey_03);
+}
+
+/* === CONTACT === */
+
+.c-contact__link {
+	display: flex; 
+	align-items: center;
+	padding-bottom: var(--spacing_24);
+}
+
+.c-contact__link > p {
+	font-weight: bold;
+}
+
+.c-contact__link:hover > .c-socialnav__item {
+	background-color: var(--color-red_alt);
+}
+
+.c-contact__link:hover > p {
+	text-decoration: wavy underline;
+	color: var(--color-white_purest);
+}

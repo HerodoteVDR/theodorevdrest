@@ -24,12 +24,13 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addCollection('socialMedias', function(collection) {
 		return [
-			{ name: 'Mail', url: 'mailto:theodorevdrest@gmail.com', icon: '/assets/svg/mail.svg' },
-			{ name: 'Facebook', url: 'https://www.facebook.com/theodore.vanderrest', icon: '/assets/svg/facebook.svg'},
-			{ name: 'GitHub', url: 'https://github.com/HerodoteVDR', icon: '/assets/svg/github.svg' },
-			{ name: 'Phone', url: 'tel:+32493397328', icon: '/assets/svg/phone.svg' },
+			{ name: 'Mail', url: 'mailto:theodorevdrest@gmail.com', icon: '/assets/svg/mail.svg', alt: 'theodorevdrest@gmail.com', description: 'Mailing me is the best way to contact me directly' },
+			{ name: 'Facebook', url: 'https://www.facebook.com/theodore.vanderrest', icon: '/assets/svg/facebook.svg', alt: "theodore.vanderrest", description: 'Truly unprofessional Facebook page, to sell all my data to big companies'},
+			{ name: 'GitHub', url: 'https://github.com/HerodoteVDR', icon: '/assets/svg/github.svg', alt:'@HerodoteVDR', description: 'I like to post some of my work on GitHub, I believe in the amazing power of open source' },
+			{ name: 'Phone', url: 'tel:+32493397328', icon: '/assets/svg/phone.svg', alt: '0493397328', description: 'The most straightforward way of discovering my belgian accent' },
 		];
 	});
+
 
 	eleventyConfig.addCollection("works", function (collection) {
 		return collection.getFilteredByGlob("./src/gallery/*.md").sort(function(a, b) {
@@ -151,4 +152,3 @@ async function resizeImage(src, width, height, mode, position) {
         .resize({ width: width, height: height, fit: mode, position: pos })
         .toBuffer();
 }
-

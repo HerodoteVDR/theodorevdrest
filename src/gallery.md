@@ -2,9 +2,9 @@
 title: Gallery
 importance: 1
 layout: "gallery.njk"
-firstimage: "src/assets/img/home-banner.jpg"
-secondimage: "src/assets/img/home-home.jpg"
+firstimage: "src/assets/img/guirlande.jpg"
+secondimage: "src/assets/img/gallery.jpg"
 smalltitle: "latest work"
 bigtitle: "Studies, commands and more"
-smalldescription: "I enjoy discovering new stuffs whenever I start a project"
+smalldescription: "every project is the opportunity to learn a lot of new things, here's a variety of these kind of projects."
 ---

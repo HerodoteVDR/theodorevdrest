@@ -1,8 +1,33 @@
-
 {% extends "src/_layouts/base.njk" %}
 
 {% block content %}
 	<div class="o-container">
-		{{ content | safe }}
+		<section class="c-pagesection">
+			{% include "src/_components/banner.njk" %}
+		</section>
+		<section class="c-pagesection" style="margin-bottom: 42px;">
+			<div class="o-separator l-bgcol__darkred"></div>
+		</section>
+		<section class="c-pagesection">
+			<div class="l-grid--3cols@medium">
+				<h4 class="c-title__xs l-text__red">contacts</h4>
+				{% for social in collections.socialMedias %}
+				{% if loop.first %}<ul class="l-grid--2cols@large l-grid_item--2c@medium">{% endif %}
+					<li class="l-padding__l@small l-padding__m@medium l-padding__l@large">
+						<h5 class="l-text__lightgreen c-title__xxs">{{ social.name }}</h5>
+						<a target="_blank" href="{{ social.url }}" class="c-contact__link">
+							<div class="c-socialnav__item" style="--socialmask : url({{ social.icon }})"></div>
+							<p class="c-text__m l-text__green display: block;">{{ social.alt }}</p>
+						</a>
+						<p class="l-text__lightgrey c-text__m">{{ social.description }}</p>
+					</li>
+				{% if loop.last %}</ul>{% endif %}
+				{% endfor %}
+			</div>
+		</section>
+
+		<div class="l-padding__m@large">
+			<a class="c-button__contact c-button__contact__big c-mainnav__link" href="/"><div class="c-button__contact__container"><p>Return to home</p><div class="o-background__conic"></div></div></a>
+		</div>
 	</div>
 {% endblock %}

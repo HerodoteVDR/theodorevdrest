@@ -12,19 +12,7 @@ archived: false
 
 ## Hello ! And welcome ! 
 
-Discover my journey through [11ty](https://www.11ty.dev/), brought by the wonderful [Zach Letherman](https://github.com/zachleat)
+The purpose of this blog is to share my work and my thoughts [11ty](https://www.11ty.dev/), a great static site generator.
 
-## Medium title
-
-### Small title
-
-#### Very small title
-
-
-```python
-
-print('lalala');
-
-```
 
 
