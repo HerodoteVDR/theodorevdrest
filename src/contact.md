@@ -1,7 +1,7 @@
 ---
 title: Contact
 layout: "contact.njk"
-importance: 1
+importance: 2
 
 firstimage: "src/assets/img/phone.jpg"
 secondimage: "src/assets/img/contact.jpg"

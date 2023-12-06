@@ -19,7 +19,10 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.setLibrary('md', markdownLib)
 
 	eleventyConfig.addCollection('mainPages', function (collection) {
-		return collection.getAllSorted().filter(page => page.data.importance && page.data.importance > 0);
+		return collection.getAllSorted().filter(page => page.data.importance && page.data.importance > 0)
+			.sort((pageA, pageB) => {
+				return pageB.data.importance - pageA.data.importance;
+			});
 	});
 
 	eleventyConfig.addCollection('socialMedias', function(collection) {

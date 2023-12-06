@@ -1,6 +1,6 @@
 ---
 title: News
-importance: 1
+importance: 3
 introduction: "Updates, or whatever crosses my mind"
 layout: "news.njk"
 ---

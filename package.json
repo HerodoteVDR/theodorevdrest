@@ -16,5 +16,13 @@
   "dependencies": {
     "markdown-it-attrs": "^4.1.6"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HerodoteVDR/theodorevdrestportfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HerodoteVDR/theodorevdrestportfolio/issues"
+  },
+  "homepage": "https://github.com/HerodoteVDR/theodorevdrestportfolio#readme",
   "description": ""
 }

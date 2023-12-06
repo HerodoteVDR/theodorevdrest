@@ -1,6 +1,6 @@
 ---
 title: Gallery
-importance: 1
+importance: 4
 layout: "gallery.njk"
 firstimage: "src/assets/img/guirlande.jpg"
 secondimage: "src/assets/img/gallery.jpg"

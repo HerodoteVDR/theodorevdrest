@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: "index.njk"
-importance: 1
+importance: 5
 
 firstimage: "src/assets/img/home-banner.jpg"
 secondimage: "src/assets/img/home-home.jpg"
