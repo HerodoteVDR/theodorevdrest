@@ -7,9 +7,25 @@
 			{% myImage cover, "aaa", [700, 500], [750, 375], [1200, 360], recenter %}
 		</section>
 		<section class="c-pagesection">
-			<div>
-				<div class="c-newcontent l-grid_item--2-3@large">
+			<div class="l-grid--3cols@large">
+				<div class="c-newcontent l-grid_item--2c@large">
 					{{ content | safe }}
+				</div>
+				<div class="c-newpost__putaclick">
+					<h4 class="c-title__xs l-text__red" style="text-align: right;">latest news</h4>
+					{% for latest in collections.news | limit(2) %}
+						{% if loop.first %}<ul class="l-padding__l@small l-padding__l@medium l-padding__l@large">{% endif %}
+							<li class="c-newpost__link l-padding__xs@small l-padding__xs@medium l-padding__xs@large">
+								<a href="{{ latest.url }}"><p class="c-text__s">{{ latest.data.emoji }} · {{ latest.data.title }}</p></a>
+								<p class="c-text__xs l-text__lightgrey"><strong>{{ latest.data.date | date("DDMMYYYY") }}</strong></p>
+							</li>
+						{% if loop.last %}</ul>{% endif %}
+					{% endfor %}
+
+					{% if mood %}
+						<h4 class="c-title__xs l-text__red" style="text-align: right;">current mood</h4>
+						<iframe class="c-newpost__mood" src="{{ mood }}" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+					{% endif %}
 				</div>
 			</div>
 		</section>

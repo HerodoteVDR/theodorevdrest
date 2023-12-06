@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addCollection('socialMedias', function(collection) {
 		return [
-			{ name: 'Mail', url: 'mailto:theodorevdrest@gmail.com', icon: '/assets/svg/mail.svg', alt: 'theodorevdrest@gmail.com', description: 'Mailing me is the best way to contact me directly' },
+			{ name: 'Mail', url: 'mailto:theodorevdrest@gmail.com', icon: '/assets/svg/mail.svg', alt: 'theodorevdrest@gmail.com', description: 'Mailing me is the easiest option to contact me for a professional request.' },
 			{ name: 'Facebook', url: 'https://www.facebook.com/theodore.vanderrest', icon: '/assets/svg/facebook.svg', alt: "theodore.vanderrest", description: 'Truly unprofessional Facebook page, to sell all my data to big companies'},
 			{ name: 'GitHub', url: 'https://github.com/HerodoteVDR', icon: '/assets/svg/github.svg', alt:'@HerodoteVDR', description: 'I like to post some of my work on GitHub, I believe in the amazing power of open source' },
 			{ name: 'Phone', url: 'tel:+32493397328', icon: '/assets/svg/phone.svg', alt: '0493397328', description: 'The most straightforward way of discovering my belgian accent' },
@@ -59,14 +59,18 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addFilter("date", function (date, format) {
 		var date = new Date(date);
 		var year = date.getFullYear();
-		var month = date.toLocaleString('en-US', { month: 'long' });
+		var month;
 		var day = date.toLocaleString('en-US', { day: '2-digit' });
 		switch (format) {
 			case 'YYYY':
 				return year;
 			case 'MONTHDDYYYY':
+			month = date.toLocaleString('en-US', { month: 'long' });
 				return `${month} ${day}, ${year}` ; 
 			break;
+			case 'DDMMYYYY' :
+				month = date.getMonth();
+				return `${day}/${month}/${year}`;
 			default:
 				return date;
 			break;

@@ -12,12 +12,12 @@ smalldescription: "In a nutschell, I enjoy to create engaging and interactive di
 bigdescription: "Enthusiasm, humour, adaptibility and a broad perspective shape my way of working"
 
 experiences:
-  - title: 'Web'
-    desc: 'In est ante in nibh mauris cursus mattis molestie a. Cursus euismod quis viverra nibh cras.'
-  - title: 'Scripting'
-    desc: 'Maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Malesuada fames ac turpis egestas integer eget aliquet. Sit amet commodo nulla facilisi nullam vehicula ipsum a.'
-  - title: 'Game'
-    desc: 'Mauris in aliquam sem fringilla ut morbi tincidunt. Rhoncus est pellentesque elit ullamcorper. Massa massa ultricies mi quis hendrerit dolor magna. Arcu felis bibendum ut tristique et egestas quis ipsum.'
-  - title: 'Shading'
-    desc: 'Id ornare arcu odio ut sem. Eget mi proin sed libero enim sed faucibus. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae.'
+  - title: 'Storytelling'
+    desc: 'Digital & interactive experiences are a great way of telling stories and create a connection between people'
+  - title: 'Accessibility'
+    desc: 'My work is possible because of the accessibility of the Web tools, and I like to share my projects on open-source. I also like to make the result accessible and enjoyable for everyone, in the most lightweight way possible.'
+  - title: 'Polyglot'
+    desc: 'I am not a react specialised programmer or a computer scientist. But I can have a variety of different responsability on a multimedia project, like 3D, animation, editing, scripting or drawing'
+  - title: 'Originality'
+    desc: 'Or making funny things in a funny way, naturally.'
 ---
