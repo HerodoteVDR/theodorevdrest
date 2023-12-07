@@ -14,7 +14,29 @@ archived: false
 
 ## Hello ! And welcome ! 
 
-The purpose of this blog is to share my work and my thoughts [11ty](https://www.11ty.dev/), a great static site generator.
+The purpose of this blog is to share my work and my thoughts [11ty](https://www.11ty.dev/), a great static site generator. I discovered through [Jérôme Coupé's introduction to eleventy](https://github.com/jeromecoupe/iad_eleventy_introduction/blob/master/eleventy_introduction_en.md). So how did i created the website ?
 
+### This is for an example to show off the possibilities :
 
+I can, for example put an image I like or something like that : 
+
+![It can be fun](https://www.legroupe-r.com/uploads/common/_500x500_crop_center-center_none/JBO3.jpg)
+
+#### Or it can be code :
+
+```javascript
+
+var nicolas = {
+    firstname: "Nicolas",
+    name: "Dupont",
+    birthdate: "31/07/00",
+};
+
+function whoisthis(person){
+    console.log(person.name);
+}
+
+whoisthis(nicolas);
+
+```
 

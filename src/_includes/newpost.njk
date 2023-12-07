@@ -11,22 +11,25 @@
 				<div class="c-newcontent l-grid_item--2c@large">
 					{{ content | safe }}
 				</div>
-				<div class="c-newpost__putaclick">
-					<h4 class="c-title__xs l-text__red" style="text-align: right;">latest news</h4>
-					{% for latest in collections.news | limit(2) %}
-						{% if loop.first %}<ul class="l-padding__l@small l-padding__l@medium l-padding__l@large">{% endif %}
-							<li class="c-newpost__link l-padding__xs@small l-padding__xs@medium l-padding__xs@large">
-								<a href="{{ latest.url }}"><p class="c-text__s">{{ latest.data.emoji }} · {{ latest.data.title }}</p></a>
-								<p class="c-text__xs l-text__lightgrey"><strong>{{ latest.data.date | date("DDMMYYYY") }}</strong></p>
-							</li>
-						{% if loop.last %}</ul>{% endif %}
-					{% endfor %}
-
+				<div class="c-newpost__side l-grid--2cols@medium l-grid--0cols@large">
+					<div class="c-newpost__putaclick">
+						<h4 class="c-title__xs l-text__red">latest news</h4>
+						{% for latest in collections.news | limit(3) %}
+							{% if loop.first %}<ul class="l-padding__l@small l-padding__l@medium l-padding__l@large">{% endif %}
+								<li class="c-newpost__text l-padding__xs@small l-padding__xs@medium l-padding__xs@large">
+									<a class="c-newpost__link" href="{{ latest.url }}"><p class="c-text__s">{{ latest.data.emoji }} · {{ latest.data.title }}</p></a>
+									<p class="c-text__xs l-text__grey"><strong>{{ latest.data.date | date("DDMMYYYY") }}</strong></p>
+								</li>
+							{% if loop.last %}</ul>{% endif %}
+						{% endfor %}
+					</div>
+					
 					{% if mood %}
-						<h4 class="c-title__xs l-text__red" style="text-align: right;">current mood</h4>
-						<iframe class="c-newpost__mood" src="{{ mood }}" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+					<div class="c-newpost__mood">
+						<h4 class="c-title__xs l-text__red">current mood</h4>
+						<iframe class="c-newpost__frame" src="{{ mood }}" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+					</div>
 					{% endif %}
-				</div>
 			</div>
 		</section>
 		<div class="l-padding__m@large">
