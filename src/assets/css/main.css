@@ -969,8 +969,8 @@ p {
 }
 
 .c-button__next {
-	mask-image: url("/assets/svg/arrow-).svg");
-	-webkit-mask-image: url('/assets/svg/arrow-).svg') ;
+	mask-image: url("/assets/svg/arrowright.svg");
+	-webkit-mask-image: url('/assets/svg/arrowright.svg') ;
 }
 
 .c-button__next:focus > .inner {
@@ -978,8 +978,8 @@ p {
 }
 
 .c-button__prev {
-	mask-image: url("/assets/svg/arrow(-.svg");
-	-webkit-mask-image: url('/assets/svg/arrow(-.svg');
+	mask-image: url("/assets/svg/arrowleft.svg");
+	-webkit-mask-image: url('/assets/svg/arrowleft.svg');
 }
 
 .c-button__prev:focus > .inner {

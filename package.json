@@ -1,28 +1,31 @@
 {
-  "name": "new-portfolio__11ty",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
-  },
-  "keywords": [],
-  "author": "Theodore van der Rest",
-  "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.8"
-  },
-  "dependencies": {
-    "markdown-it-attrs": "^4.1.6"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HerodoteVDR/theodorevdrestportfolio.git"
-  },
-  "bugs": {
-    "url": "https://github.com/HerodoteVDR/theodorevdrestportfolio/issues"
-  },
-  "homepage": "https://github.com/HerodoteVDR/theodorevdrestportfolio#readme",
-  "description": ""
+	"name": "new-portfolio__11ty",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "eleventy --serve",
+		"build": "eleventy && npm run jsbuild && npm run cssbuild",
+		"jsbuild": "esbuild src/assets/scripts/*.js --minify --bundle --outdir=dist/assets/scripts",
+	"cssbuild": "esbuild src/assets/css/main.css --minify --bundle --outfile=dist/assets/css/main.css --external:/assets/svg/*"
+	},
+	"keywords": [],
+	"author": "Theodore van der Rest",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-img": "^3.1.8",
+		"esbuild": "^0.19.8"
+	},
+	"dependencies": {
+		"markdown-it-attrs": "^4.1.6"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/HerodoteVDR/theodorevdrestportfolio.git"
+	},
+	"bugs": {
+		"url": "https://github.com/HerodoteVDR/theodorevdrestportfolio/issues"
+	},
+	"homepage": "https://github.com/HerodoteVDR/theodorevdrestportfolio#readme",
+	"description": ""
 }
