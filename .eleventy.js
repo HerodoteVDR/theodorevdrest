@@ -3,7 +3,11 @@ const Sharp = require('sharp');
 
 module.exports = function(eleventyConfig) {
 
-	eleventyConfig.addPassthroughCopy("./src/assets/");
+	eleventyConfig.addPassthroughCopy("./src/assets/audio/");
+	eleventyConfig.addPassthroughCopy("./src/assets/css/");
+	eleventyConfig.addPassthroughCopy("./src/assets/favicon/");
+	eleventyConfig.addPassthroughCopy("./src/assets/scripts/");
+	eleventyConfig.addPassthroughCopy("./src/assets/svg/");
 	eleventyConfig.addWatchTarget("./src/assets/");
 
 

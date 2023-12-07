@@ -4,7 +4,9 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "eleventy --serve",
-		"build": "eleventy && npm run jsbuild && npm run cssbuild",
+		"build": "npm run clean && eleventy && npm run jsbuild && npm run cssbuild",
+		"deploy": "git add * && git commit -m 'Deployment' && git push",
+		"clean": "rimraf dist",
 		"jsbuild": "esbuild src/assets/scripts/*.js --minify --bundle --outdir=dist/assets/scripts",
 		"cssbuild": "esbuild src/assets/css/*.css --minify --bundle --outdir=dist/assets/css --external:/assets/svg/*"
 	},
@@ -17,7 +19,8 @@
 		"esbuild": "^0.19.8"
 	},
 	"dependencies": {
-		"markdown-it-attrs": "^4.1.6"
+		"markdown-it-attrs": "^4.1.6",
+		"rimraf": "^5.0.5"
 	},
 	"repository": {
 		"type": "git",
