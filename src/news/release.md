@@ -24,19 +24,15 @@ The purpose of this blog is to have my own place on the internet to post my work
 
 With [Sharp](https://sharp.pixelplumbing.com/), you can crop and resize your image super fast.
 ```javascript
-
 async function resizeImage(src, width, height, mode) {
     return await Sharp(src)
         .resize({ width: width, height: height, fit: mode })
         .toBuffer();
 }
-
 ```
 
-```
 
 ```javascript
-
 eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSize, bigSize) {
         try {
             const resizedImageBuffer = await Promise.all([
@@ -88,6 +84,4 @@ eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSi
             console.error(`Error in myImage shortcode:`, error);
             return "";
         }
-
-
-
+```

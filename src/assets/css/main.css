@@ -1121,16 +1121,14 @@ p {
 
 .c-newcontent > pre {
 	margin: 0;
-	padding: 0;
-	color: inherit;
-	padding-left: var(--spacing_24);
+	margin-top: var(--spacing_24);
+	padding: var(--spacing_24);
 	background-color: var(--color-grey_03);
 	border-radius: var(--spacing_12);
-	overflow: auto;
+	white-space: pre-wrap;
 }
 
 .c-newcontent > pre > code {
-	color: inherit;
 }
 
 .c-newcontent > p > img {
