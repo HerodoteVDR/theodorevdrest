@@ -1,7 +1,7 @@
 ---
 title: "How to be ecoresponsable"
 layout: "newpost.njk"
-cover: "src/assets/img/news/eco.jpg"
+cover: "src/assets/img/news/eco.png"
 alt: "figma illustration"
 date: Created
 emoji: 🌿

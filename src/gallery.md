@@ -2,7 +2,7 @@
 title: Gallery
 importance: 4
 layout: "gallery.njk"
-firstimage: "src/assets/img/guirlande.jpg"
+firstimage: "src/assets/img/guirlande.png"
 secondimage: "src/assets/img/gallery.jpg"
 smalltitle: "latest work"
 bigtitle: "Studies, commands and more"
