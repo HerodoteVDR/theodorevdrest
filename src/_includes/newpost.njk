@@ -11,7 +11,7 @@
 				<div class="c-newcontent l-grid_item--2c@large">
 					{{ content | safe }}
 				</div>
-				<div class="c-newpost__side l-grid--2cols@medium l-grid--0cols@large">
+				<div class="c-newpost__side l-grid--2cols@medium l-grid--0cols@large l-gap__m@small l-gap__m@medium l-gap__none@large">
 					<div class="c-newpost__putaclick">
 						<h4 class="c-title__xs l-text__red">latest news</h4>
 						{% for latest in collections.news | limit(3) %}

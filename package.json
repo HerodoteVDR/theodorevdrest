@@ -6,7 +6,7 @@
 		"start": "eleventy --serve",
 		"build": "eleventy && npm run jsbuild && npm run cssbuild",
 		"jsbuild": "esbuild src/assets/scripts/*.js --minify --bundle --outdir=dist/assets/scripts",
-	"cssbuild": "esbuild src/assets/css/main.css --minify --bundle --outfile=dist/assets/css/main.css --external:/assets/svg/*"
+		"cssbuild": "esbuild src/assets/css/main.css --minify --bundle --outfile=dist/assets/css/main.css --external:/assets/svg/*"
 	},
 	"keywords": [],
 	"author": "Theodore van der Rest",

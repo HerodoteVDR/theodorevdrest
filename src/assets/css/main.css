@@ -648,6 +648,9 @@ p {
 }
 
 @media all and (min-width: calc(1050/16*1rem)){
+	.l-gap__none\@large {
+		margin-top: 0;
+	}
 	.l-gap__s\@large {
 		margin-top: var(--spacing_60);
 	}
@@ -1123,6 +1126,7 @@ p {
 	padding-left: var(--spacing_24);
 	background-color: var(--color-grey_03);
 	border-radius: var(--spacing_12);
+	overflow: auto;
 }
 
 .c-newcontent > pre > code {
@@ -1154,7 +1158,7 @@ p {
 .c-newpost__frame {
 	display: block;
 	border-radius: 12px;
-	height: 200px;
+	height: 152px;
 	width: 100%;
 }
 
@@ -1186,7 +1190,9 @@ p {
 }
 
 @media all and (min-width: calc(1050/16*1rem)){
+
 	.c-newpost__side {
+		margin: 0 ;
 		border: none;
 		border-left: solid;
 		border-color: var(--color-green_dark);
