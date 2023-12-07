@@ -3,7 +3,7 @@ title: "How to be ecoresponsable"
 layout: "newpost.njk"
 cover: "src/assets/img/news/eco.jpg"
 alt: "figma illustration"
-date: 2023-12-07
+date: Created
 emoji: 🌿
 mood: https://open.spotify.com/embed/track/2XV5CUyw7gPVi18d718D4f?utm_source=generator
 

@@ -10,7 +10,7 @@
 			<li class="c-news__item l-grid_item--2-3@large">
 				<a class="c-news__link" href="{{ new.url }}">
 					<article class="c-news__container">
-						<h4 class="c-title__xs l-text__lightgrey">{{ new.data.date | date("MONTHDDYYYY") }}</h4>
+						<h4 class="c-title__xs l-text__lightgrey">{{ new.date | date("MONTHDDYYYY") }}</h4>
 						<h2 class="c-title__s">{{ new.data.emoji }} · {{ new.data.title }}</h2>
 					</article>
 				</a>

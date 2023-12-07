@@ -4,7 +4,7 @@ layout: "newpost.njk"
 cover: "src/assets/img/news/release.jpg"
 recenter: "bottom"
 alt: "figma illustration"
-date: 2023-12-01
+date: Created 
 emoji: 🚀
 mood: https://open.spotify.com/embed/track/0QeI79sp1vS8L3JgpEO7mD?utm_source=generator
 
@@ -22,70 +22,8 @@ The purpose of this blog is to have my own place on the internet to post my work
 
 #### How I generated all my optimised images
 
+With [Sharp](https://sharp.pixelplumbing.com/), you can crop and resize your image super fast.
 ```javascript
-
-const Image = require("@11ty/eleventy-img");
-const Sharp = require('sharp');
-
-module.exports = function(eleventyConfig) {
-	eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSize, bigSize) {
-		try {
-			console.log(`myImage shortcode called with src:`, src);
-
-			const resizedImageBuffer = await Promise.all([
-				resizeImage(src, smallSize[0], smallSize[1], "cover"),
-				resizeImage(src, midSize[0], midSize[1], "cover"),
-				resizeImage(src, bigSize[0], bigSize[1], "cover"),
-			]);
-
-			const metadata = await Promise.all(
-				resizedImageBuffer.map(async buffer => {
-					return await Image(buffer, {
-						formats: ["webp"],
-						outputDir: "./dist/assets/img/output",
-						urlPath: "/assets/img/output/",
-					});
-				})
-			);
-
-			console.log("Generated image metadata:", metadata);
-
-			const srcset = metadata.map((data, index) => {
-				const width = [smallSize, midSize, bigSize][index][0];
-				return `${data.webp[0].url} ${width}w`;
-			}).join(', ');
-
-			let imageAttributes = {
-				alt,
-				loading: "lazy",
-				decoding: "async",
-				class: "o-fluidimage"
-			};
-
-			const sizes = `(min-width: 1050px) ${bigSize[0]}px, (min-width: 750px) ${midSize[0]}px, ${smallSize[0]}px`;
-			const imageHTML = 
-				`<picture> 
-					<source media="(min-width: 1050px)" srcset="${metadata[2].webp[0].url}">
-					<source media="(min-width: 750px)" srcset="${metadata[1].webp[0].url}">
-					<img
-						class="${ imageAttributes.class }" 
-						alt="${ imageAttributes.alt }" 
-						loading="${ imageAttributes.loading }
-						decoding="${ imageAttributes.decoding }" 
-						src="${ metadata[0].webp[0].url }"
-					/>
-				</picture>`;
-
-			console.log(`Generated image HTML:`, imageHTML);
-
-			return imageHTML;
-		} 
-		catch (error) {
-			console.error(`Error in myImage shortcode:`, error);
-			return "";
-		}
-	});
-}
 
 async function resizeImage(src, width, height, mode) {
     return await Sharp(src)
@@ -94,4 +32,62 @@ async function resizeImage(src, width, height, mode) {
 }
 
 ```
+
+```
+
+```javascript
+
+eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSize, bigSize) {
+        try {
+            const resizedImageBuffer = await Promise.all([
+                resizeImage(src, smallSize[0], smallSize[1], "cover"),
+                resizeImage(src, midSize[0], midSize[1], "cover"),
+                resizeImage(src, bigSize[0], bigSize[1], "cover"),
+            ]);
+
+            const metadata = await Promise.all(
+                resizedImageBuffer.map(async buffer => {
+                    return await Image(buffer, {
+                        formats: ["webp"],
+                        outputDir: "./dist/assets/img/output",
+                        urlPath: "/assets/img/output/",
+                    });
+                })
+            );
+            const srcset = metadata.map((data, index) => {
+                const width = [smallSize, midSize, bigSize][index][0];
+                return `${data.webp[0].url} ${width}w`;
+            }).join(', ');
+
+            let imageAttributes = {
+                alt,
+                loading: "lazy",
+                decoding: "async",
+                class: "o-fluidimage"
+            };
+
+            const sizes = `(min-width: 1050px) ${bigSize[0]}px, (min-width: 750px) ${midSize[0]}px, ${smallSize[0]}px`;
+            const imageHTML = 
+                `<picture> 
+                    <source media="(min-width: 1050px)" srcset="${metadata[2].webp[0].url}">
+                    <source media="(min-width: 750px)" srcset="${metadata[1].webp[0].url}">
+                    <img
+                        class="${ imageAttributes.class }" 
+                        alt="${ imageAttributes.alt }" 
+                        loading="${ imageAttributes.loading }
+                        decoding="${ imageAttributes.decoding }" 
+                        src="${ metadata[0].webp[0].url }"
+                    />
+                </picture>`;
+
+            console.log(`Generated image HTML:`, imageHTML);
+
+            return imageHTML;
+        } 
+        catch (error) {
+            console.error(`Error in myImage shortcode:`, error);
+            return "";
+        }
+
+
 

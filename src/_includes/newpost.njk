@@ -14,12 +14,14 @@
 				<div class="c-newpost__side l-grid--2cols@medium l-grid--0cols@large l-gap__m@small l-gap__m@medium l-gap__none@large">
 					<div class="c-newpost__putaclick">
 						<h4 class="c-title__xs l-text__red">latest news</h4>
-						{% for latest in collections.news | limit(3) %}
+						{% for latest in collections.news | limit(2) %}
 							{% if loop.first %}<ul class="l-padding__l@small l-padding__l@medium l-padding__l@large">{% endif %}
+								{% if title != latest.data.title %}
 								<li class="c-newpost__text l-padding__xs@small l-padding__xs@medium l-padding__xs@large">
 									<a class="c-newpost__link" href="{{ latest.url }}"><p class="c-text__s">{{ latest.data.emoji }} · {{ latest.data.title }}</p></a>
-									<p class="c-text__xs l-text__grey"><strong>{{ latest.data.date | date("DDMMYYYY") }}</strong></p>
+									<p class="c-text__xs l-text__grey"><strong>{{ latest.date | date("DDMMYYYY") }}</strong></p>
 								</li>
+								{% endif %}
 							{% if loop.last %}</ul>{% endif %}
 						{% endfor %}
 					</div>
