@@ -389,6 +389,7 @@ p {
 		padding-top: var(--spacing_60);
 		padding-bottom: var(--spacing_180);
 	}
+
 	.c-mainnav__container {
 		padding-bottom: 0;
 		display: flex;
@@ -396,11 +397,13 @@ p {
 		justify-content: space-between;
 		align-items: center;
 	}
+
 	.c-mainnav__list {
 		flex-direction: row;
 		width: 66%;
 		justify-content: space-between;
 	}
+
 	.c-mainnav__link {
 		font-size: var(--fontsize-19);
 		line-height: var(--spacing_24);
@@ -421,6 +424,7 @@ p {
 		font-size: var(--fontsize-19);
 		line-height: var(--spacing_24);
 	}
+
 	.c-socialnav {
 		padding: 0;
 	}
@@ -804,7 +808,8 @@ p {
 		z-index: -1;
 		transform-origin: center;
 		transform: scaleX(150%);
-	}
+		overflow-x: hidden;
+}
 
 @media all and (min-width:calc(750/16*1rem)){
 	.c-banner::after {
@@ -812,8 +817,6 @@ p {
 		height: calc(400/16*1rem);
 	}
 }
-
-
 
 @media all and (min-width:calc(1050/16*1rem)){
 	.c-banner::after {
@@ -882,6 +885,7 @@ p {
 	justify-self: center;	
 	rotate: 5deg;
 }
+
 .c-latest__item3 {
 	justify-self: end;
 	rotate: -7deg;
@@ -918,6 +922,7 @@ p {
 	z-index: 3;
 	filter: brightness(calc(100/3*2%));
 }
+
 .c-latest__item.selected {
 	z-index: 6;
 	width: 300%;
@@ -931,8 +936,6 @@ p {
 .c-latest__item.selected .c-latest__container::after {
     opacity: 0.3;
 }
-
-
 
 .c-latest__buttons {
 	display: flex;
@@ -989,8 +992,6 @@ p {
 	transform: rotate(90deg);
 }
 
-
-
 .c-latestparaph__item {
 	display: none;
 }
@@ -1015,7 +1016,6 @@ p {
 	.c-latest__item.selected {
 		width: 200%;
 	}
-
 	.c-latest__buttons {
 	display: none;
 	}
@@ -1067,7 +1067,6 @@ p {
 	transition: width 0.3s ease-out;
 }
 
-
 /* === NEW CONTENT === */
 
 .c-newcontent > h1 {
@@ -1089,7 +1088,6 @@ p {
 	color: var(--color-green_light);
 	padding-bottom: var(--spacing_18);
 	line-height: var(--spacing_30);
-	
 }
 
 .c-newcontent > h4 {
@@ -1126,9 +1124,6 @@ p {
 	background-color: var(--color-grey_03);
 	border-radius: var(--spacing_12);
 	white-space: pre-wrap;
-}
-
-.c-newcontent > pre > code {
 }
 
 .c-newcontent > p > img {
@@ -1203,15 +1198,14 @@ p {
 		text-align: right ;
 	}
 
-
 	.c-newpost__frame {
 		height: 352px;
 	}
 
 	.c-newpost__text {
 		text-align: right;
-
 	}
+
 }
 
 /* === CONTACT === */

@@ -49,8 +49,8 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addCollection("news", function (collection) {
 		return collection.getFilteredByGlob("./src/news/*.md").sort(function(a, b) {
-			const dateA = new Date(a.data.date);
-			const dateB = new Date(b.data.date);
+			const dateA = new Date(a.date);
+			const dateB = new Date(b.date);
 			return dateB - dateA;	
 		});
 	});
@@ -104,23 +104,15 @@ module.exports = function(eleventyConfig) {
 				})
 			);
 
-			const srcset = metadata.map((data, index) => {
-				const width = [smallSize, midSize, bigSize][index][0];
-				return `${data.webp[0].url} ${width}w`;
-			}).join(', ');
-
 			let imageAttributes = {
-				alt,
-				sizes: `(min-width: 1050px) 1050px, (min-width: 750px) 750px, 100vw`,
+				alt: alt,
 				loading: "lazy",
 				decoding: "async",
 				class: "o-fluidimage"
 			};
 
-			const sizes = `(min-width: 1050px) ${bigSize[0]}px, (min-width: 750px) ${midSize[0]}px, ${smallSize[0]}px`;
 			const imageHTML = 
 				`<picture> 
-
 					<source media="(min-width: 1050px)" srcset="${metadata[2].webp[0].url}">
 					<source media="(min-width: 750px)" srcset="${metadata[1].webp[0].url}">
 					<img
