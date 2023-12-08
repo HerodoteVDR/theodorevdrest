@@ -16,11 +16,11 @@ archived: false
 
 The purpose of this blog is to have my own place on the internet to post my work and my thoughts. It was made using [11ty](https://www.11ty.dev/), a great static site generator. I discovered through [Jérôme Coupé's introduction to eleventy](https://github.com/jeromecoupe/iad_eleventy_introduction/blob/master/eleventy_introduction_en.md), as a former student of this fellow, he inspired me in a various ways to create this blog. Here is his [website](https://www.webstoemp.com/).
 
-## 11ty workarounds
+## One feature I loved implementing : responsive & optimised images generation 
 
-![It can be fun](https://www.legroupe-r.com/uploads/common/_500x500_crop_center-center_none/JBO3.jpg)
+11ty is awesome because it's very simple and lightweight. From it's simple core, it let's you building your website and it's tools, extending its capabilities bits by bits in the most dynamic and thrilling way possible. Coming from a Craft CMS project, I was missing the image transform Craft was proposing, so I tried replacating it with Sharp and eleventy image plugin. 
 
-#### How I generated all my optimised images
+#### How it works : 
 
 With [Sharp](https://sharp.pixelplumbing.com/), you can crop and resize your image super fast.
 ```javascript
@@ -32,18 +32,19 @@ async function resizeImage(src, width, height, mode) {
 ```
 
   
-Then, inside an ` eleventy.addShortcode ` async function, you can add to your eleventy configuration a function that will generate images at the sizes you want, directly from your templates.
+Then, with an ` eleventy.addShortcode ` async function inside your eleventy config, you can generate images at the sizes you want, directly from your templates.
 
 ```javascript
-const resizedImageBuffer = await Promise.all([
-	resizeImage(src, smallSize[0], smallSize[1], "cover", recenter),
-	resizeImage(src, midSize[0], midSize[1], "cover", recenter),
-	resizeImage(src, bigSize[0], bigSize[1], "cover", recenter),
-	]);
+eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSize, bigSize, recenter) {
+    const resizedImageBuffer = await Promise.all([
+      resizeImage(src, smallSize[0], smallSize[1], "cover", recenter),
+      resizeImage(src, midSize[0], midSize[1], "cover", recenter),
+      resizeImage(src, bigSize[0], bigSize[1], "cover", recenter),
+      ]);
 }
 ```
 
-Now we must generate the metadatas, and the image attributes that will be used to generate the html
+Now we must generate the metadatas, and the image attributes that will be used to generate the html.
 
 ```javascript
 const metadata = await Promise.all(
