@@ -5,7 +5,7 @@
 	"scripts": {
 		"start": "eleventy --serve",
 		"build": "npm run clean && eleventy && npm run jsbuild && npm run cssbuild",
-		"deploy": "git add * && git commit -m \"$npm_package_config_commit_message\" && git merge $(git rev-parse --abbrev-ref HEAD) && git push",
+		"deploy": "npm run build && git add * && git commit -m 'Deployment'",
 		"clean": "rimraf dist",
 		"jsbuild": "esbuild src/assets/scripts/*.js --minify --bundle --outdir=dist/assets/scripts",
 		"cssbuild": "esbuild src/assets/css/*.css --minify --bundle --outdir=dist/assets/css --external:/assets/svg/*"
