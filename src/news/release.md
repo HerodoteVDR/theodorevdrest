@@ -18,7 +18,7 @@ The purpose of this blog is to have my own place on the internet to post my work
 
 ## One feature I loved implementing : responsive & optimised images generation 
 
-11ty is awesome because it's very simple and lightweight. From it's simple core, it let's you build your website and it's own tools, extending its capabilities bits by bits in the most dynamic and thrilling way possible. Coming from a Craft CMS project, I was missing the image transform Craft was proposing, so I tried replacating it with Sharp and eleventy image plugin. 
+11ty is awesome because it's very a very simple and lightweight SSG. From it's simple core, it let's you build your website and it's own tools, extending its capabilities in the most dynamic and thrilling way possible. Coming from a Craft CMS project, I was missing the image transform Craft was proposing, so I tried replicating it with Sharp and eleventy image plugin. 
 
 #### How it works : 
 
@@ -90,3 +90,4 @@ And call that function from your favorite templating language, here [Nunjucks](h
 {# myImage source, alt,  [350, 250], [480, 200], [750, 350] #}
 ```
 
+And here you have a simple tool that generates all your cropped images. Of course you can extend the format compatibility for the images, allow positioning to the different corners of the image, and many more as sharp has a lot of cool features !
