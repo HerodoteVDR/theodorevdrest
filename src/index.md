@@ -4,6 +4,7 @@ layout: "index.njk"
 importance: 5
 
 firstimage: "src/assets/img/home-banner.jpg"
+recenterA: "top"
 secondimage: "src/assets/img/home-home.jpg"
 recenterB: "top"
 smalltitle: "hello I'm Théodore, I like"
@@ -17,7 +18,7 @@ experiences:
   - title: 'Accessibility'
     desc: 'I like to share my projects on open-source, as I use the tools and idead of the open-source contributors. A major concern for me is also that my product can be experienced by most of people on earth, making it the most leightweight, ethical and ecological possible.'
   - title: 'Polyglot'
-    desc: 'I can understand the essential cration steps of most multimedia project. I can put my hands on 3D, animation, editing, scripting, storybording, or sometimes to find the tool or to design it so you can create your own thing with it.'
+    desc: 'I understand the essential creation steps of most multimedia projects. I enjoy putting my hands on 3D, animation, editing, scripting, or storybording. Sometimes you need to find the tool or to design it yourself so you can create your own workflow.'
   - title: 'Originality'
-    desc: 'Or making artistic things in a funny way. Spontaneity and taking the time to shape ideas into reality are my way to go.'
+    desc: 'Or making artistic things in a funny way. I try to always take the time to shape ideas into reality and try out things spontaneously.'
 ---

@@ -5,7 +5,7 @@ resume: 'To complete the last internship for my school, I was free to imagine ho
 image: 'src/assets/img/work/gallery.jpg'
 recenter: 'center'
 alt: 'From 20STM'
-redirect: 'r.com'
+redirect: 'gallerytest-tvdr.netlify.app'
 categories:
   - react
   - shading

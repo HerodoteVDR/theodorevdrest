@@ -13,6 +13,7 @@
 				</div>
 				<div class="c-newpost__side l-grid--2cols@medium l-grid--0cols@large l-gap__m@small l-gap__m@medium l-gap__none@large">
 					<div class="c-newpost__putaclick">
+					{% if collections.news | length > 1 %}
 						<h4 class="c-title__xs l-text__red">latest news</h4>
 						{% for latest in collections.news | limit(3) %}
 							{% if loop.first %}<ul class="l-padding__l@small l-padding__l@medium l-padding__l@large">{% endif %}
@@ -24,6 +25,7 @@
 								{% endif %}
 							{% if loop.last %}</ul>{% endif %}
 						{% endfor %}
+					{% endif %}
 					</div>
 					
 					{% if mood %}

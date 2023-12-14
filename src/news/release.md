@@ -18,7 +18,7 @@ The purpose of this blog is to have my own place on the internet to post my work
 
 ## One feature I loved implementing : responsive & optimised images generation 
 
-11ty is awesome because it's very simple and lightweight. From it's simple core, it let's you building your website and it's tools, extending its capabilities bits by bits in the most dynamic and thrilling way possible. Coming from a Craft CMS project, I was missing the image transform Craft was proposing, so I tried replacating it with Sharp and eleventy image plugin. 
+11ty is awesome because it's very simple and lightweight. From it's simple core, it let's you build your website and it's own tools, extending its capabilities bits by bits in the most dynamic and thrilling way possible. Coming from a Craft CMS project, I was missing the image transform Craft was proposing, so I tried replacating it with Sharp and eleventy image plugin. 
 
 #### How it works : 
 

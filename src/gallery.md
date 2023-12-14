@@ -6,5 +6,6 @@ firstimage: "src/assets/img/guirlande.png"
 secondimage: "src/assets/img/gallery.jpg"
 smalltitle: "latest work"
 bigtitle: "Studies, commands and more"
-smalldescription: "Every project is the opportunity to learn a lot of new things. Here's a variety of projects I worked on."
+smalldescription: "I believe very project is the opportunity to learn a lot of new things. "
+bigdescription: "Here's a variety of projects I worked on."
 ---

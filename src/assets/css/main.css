@@ -347,6 +347,8 @@ p {
 	border-width: 2px;
 	border-color: var(--color-white_purest);
 	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
 	background: conic-gradient(from 180deg, var(--color-red_main), var(--color-green_darker)) ;
 	height: 10px;
 	width: 10px;
@@ -482,6 +484,8 @@ p {
 	border: solid;
 	border-width: 2px;
 	border-radius: var(--spacing_12);
+	-webkit-border-radius: var(--spacing_12);
+	-moz-border-radius: var(--spacing_12);
 	overflow: hidden;
 	transition: border-radius 0.2s ease-out, border-width 0.2s ease-out;
 }
@@ -511,6 +515,8 @@ p {
 .c-button__contact:hover > .c-button__contact__container {
 	border-width: 3px;
 	border-radius: var(--spacing_18);
+	-webkit-border-radius: var(--spacing_18);
+	-moz-border-radius: var(--spacing_18);
 }
 
 .c-button__contact:hover > .c-button__contact__container > .o-background__conic {
@@ -547,6 +553,8 @@ p {
 	margin: 0 auto;
 	background: conic-gradient(from -160.33deg at 66.66% 33.33%, rgb(247,27,27, 0), var(--color-red_main));
 	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
 }
 
 .c-logo--bar {
@@ -778,6 +786,8 @@ p {
 	outline: var(--spacing_12) solid var(--color-white_purest);
 	outline-offset: calc(12/16*-1rem);
 	border-radius: var(--spacing_12);
+	-webkit-border-radius: var(--spacing_12);
+	-moz-border-radius: var(--spacing_12);
 	display: block;
 	height: auto;
 	max-width: 100%;
@@ -909,6 +919,8 @@ p {
     display: block;
     position: absolute;
 	border-radius: var(--spacing_12);
+	-webkit-border-radius: var(--spacing_12);
+	-moz-border-radius: var(--spacing_12);
     top: 0;
     right: 0;
     bottom: 0;
@@ -955,6 +967,8 @@ p {
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
 	border-radius: 100% ;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
 	mask-size: cover;
 	-webkit-mask-size: cover;
 	mask-repeat: no-repeat;
@@ -1037,6 +1051,8 @@ p {
 	padding: var(--spacing_30);
 	display: block;
 	border-radius: var(--spacing_12);
+	-webkit-border-radius: var(--spacing_12);
+	-moz-border-radius: var(--spacing_12);
 	border: solid;
 	border-color: var(--color-white_purest);
 	border-width: var(--spacing_6);
@@ -1046,6 +1062,8 @@ p {
 
 .c-news__item:hover > .c-news__link {
 	border-radius: var(--spacing_24);
+	-webkit-border-radius: var(--spacing_24);
+	-moz-border-radius: var(--spacing_24);
 }
 
 .c-news__item:hover > .c-news__link > .c-news__container::after {
@@ -1126,6 +1144,8 @@ p {
 	padding: var(--spacing_24);
 	background-color: var(--color-grey_03);
 	border-radius: var(--spacing_12);
+	-webkit-border-radius: var(--spacing_12);
+	-moz-border-radius: var(--spacing_12);
 	white-space: pre-wrap;
 }
 
@@ -1135,6 +1155,8 @@ p {
 	outline: var(--spacing_12) solid var(--color-white_purest);
 	outline-offset: calc(12/16*-1rem);
 	border-radius: var(--spacing_12);
+	-webkit-border-radius: var(--spacing_12);
+	-moz-border-radius: var(--spacing_12);
 	display: block;
 	height: auto;
 	max-width: 100%;
@@ -1147,13 +1169,17 @@ p {
 	margin-bottom: var(--spacing_24);
 	width: 100%;
 	border-radius: var(--spacing_24);
+	-webkit-border-radius: var(--spacing_24);
+	-moz-border-radius: var(--spacing_24);
 	background-color: var(--color-grey_03);
 }
 
 
 .c-newpost__frame {
 	display: block;
-	border-radius: 12px;
+	border-radius: var(--spacing_12);
+	-webkit-border-radius: var(--spacing_12);
+	-moz-border-radius: var(--spacing_12);
 	height: 152px;
 	width: 100%;
 }
