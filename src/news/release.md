@@ -14,7 +14,9 @@ archived: false
 
 ## Hello ! And welcome ! 
 
-The purpose of this blog is to have my own place on the internet to post my work and my thoughts. It was made using [11ty](https://www.11ty.dev/), a great static site generator. I discovered through [Jérôme Coupé's introduction to eleventy](https://github.com/jeromecoupe/iad_eleventy_introduction/blob/master/eleventy_introduction_en.md), as a former student of this fellow, he inspired me in a various ways to create this blog. Here is his [website](https://www.webstoemp.com/).
+The purpose of this blog is to have my own place on the internet to post my work and my thoughts. It was made using [11ty](https://www.11ty.dev/), a great static site generator I discovered through [Jérôme Coupé's introduction to eleventy](https://github.com/jeromecoupe/iad_eleventy_introduction/blob/master/eleventy_introduction_en.md). As a former student of this fellow, he inspired me in a various ways to create this blog. Here is his [website](https://www.webstoemp.com/).  
+
+The source code of this website is also available here on [Github](https://github.com/HerodoteVDR/theodorevdrestportfolio), under an MIT License that let's you get the code. Please credit me if you want to use my work.
 
 ## One feature I loved implementing : responsive & optimised images generation 
 

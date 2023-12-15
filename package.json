@@ -12,7 +12,7 @@
 	},
 	"keywords": [],
 	"author": "Theodore van der Rest",
-	"license": "ISC",
+	"license": "MIT",
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-img": "^3.1.8",
@@ -30,5 +30,5 @@
 		"url": "https://github.com/HerodoteVDR/theodorevdrestportfolio/issues"
 	},
 	"homepage": "https://github.com/HerodoteVDR/theodorevdrestportfolio#readme",
-	"description": ""
+	"description": "The internet place of Theodore van der Rest"
 }

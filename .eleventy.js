@@ -32,7 +32,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addCollection('socialMedias', function(collection) {
 		return [
 			{ name: 'Mail', url: 'mailto:theodorevdrest@gmail.com', icon: '/assets/svg/mail.svg', alt: 'theodorevdrest@gmail.com', description: 'Mailing me is the easiest option to contact me for a professional request.' },
-			{ name: 'Facebook', url: 'https://www.facebook.com/theodore.vanderrest', icon: '/assets/svg/facebook.svg', alt: "theodore.vanderrest", description: 'Truly unprofessional Facebook page, to sell all my data to big companies'},
+			{ name: 'LinkedIn', url: 'https://www.linkedin.com/in/theodore-van-der-rest-b86094238/', icon: '/assets/svg/linkedin.svg', alt: "Theodore van der Rest", description: 'Quickest way to check if I am open to work.'},
 			{ name: 'GitHub', url: 'https://github.com/HerodoteVDR', icon: '/assets/svg/github.svg', alt:'@HerodoteVDR', description: 'I like to post some of my work on GitHub, I believe in the amazing power of open source' },
 			{ name: 'Phone', url: 'tel:+32493397328', icon: '/assets/svg/phone.svg', alt: '+32493397328', description: 'The most straightforward way of discovering my belgian accent' },
 		];
