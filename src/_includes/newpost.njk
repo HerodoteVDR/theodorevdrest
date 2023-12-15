@@ -1,10 +1,10 @@
 {% extends "src/_layouts/base.njk" %}
 {% block content %}
 	<div class="o-container">
-		<section class="c-pagesection">
+		<section class="c-pagesection c-postbanner">
 			<h4 class="c-title__xs l-text__lightgreen">{{ emoji }} · {{ page.date | date("MONTHDDYYYY")}}</h4>
 			<h1 class="c-title__l l-text__red">{{ title }}</h1>
-			{% myImage cover, "aaa", [700, 500], [750, 375], [1200, 360], recenter %}
+			{% myImage cover, alt, [700, 500], [750, 375], [1200, 360], recenter, alt %}
 		</section>
 		<section class="c-pagesection">
 			<div class="l-grid--3cols@large">

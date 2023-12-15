@@ -3,7 +3,7 @@ title: "My blog is live !"
 layout: "newpost.njk"
 cover: "src/assets/img/news/release.jpg"
 recenter: "bottom"
-alt: "figma illustration"
+alt: "Launch"
 date: Created 
 emoji: 🚀
 mood: https://open.spotify.com/embed/track/0QeI79sp1vS8L3JgpEO7mD?utm_source=generator

@@ -1,5 +1,5 @@
 {
-	"name": "new-portfolio__11ty",
+	"name": "theodorevdrest",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
@@ -10,7 +10,7 @@
 		"jsbuild": "esbuild src/assets/scripts/*.js --minify --bundle --outdir=dist/assets/scripts",
 		"cssbuild": "esbuild src/assets/css/*.css --minify --bundle --outdir=dist/assets/css --external:/assets/svg/*"
 	},
-	"keywords": [],
+	"keywords": ["11ty", "eleventy", "blog", "portfolio", "developer", "multimedia"],
 	"author": "Theodore van der Rest",
 	"license": "MIT",
 	"devDependencies": {

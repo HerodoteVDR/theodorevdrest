@@ -815,12 +815,11 @@ p {
 		left: 0;
 		top: 45%;
 		height: calc(300/16*1rem);
-
 		width: 100%;
 		background: linear-gradient(var(--color-green_darker), var(--color-red_main));
 		z-index: -1;
 		transform-origin: center;
-		transform: scaleX(150%);
+		transform: scaleX(calc(5/3*100%));
 		overflow-x: hidden;
 }
 
@@ -834,6 +833,32 @@ p {
 @media all and (min-width:calc(1050/16*1rem)){
 	.c-banner::after {
 		top: var(--spacing_144);
+	}
+}
+
+.c-postbanner {
+	position: relative;
+}
+
+.c-postbanner::after {
+	position: absolute;
+	content: "";
+	top: calc(1/3*100%);
+	left: 0;
+	height: calc(350/16*1rem);
+	width: 100%;
+	z-index: -1;
+	transform-origin: center;
+	transform: scaleX(calc(5/3*100%));
+	overflow-x: hidden;
+	background: linear-gradient(var(--color-red_main), var(--color-green_darker));
+}
+
+@media all and (max-width: calc(350/16*1rem)){
+
+	.c-postbanner::after {
+		top: 50%;
+		height: calc(300/16*1rem);
 	}
 }
 
