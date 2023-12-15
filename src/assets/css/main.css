@@ -538,6 +538,10 @@ p {
 
 /* === LOGO === */
 
+.c-logo__link {
+	display: block;
+	width: 136.24px;
+}
 .c-logo--container {
 	position: relative;
 	max-width: 100%;
