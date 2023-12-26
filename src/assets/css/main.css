@@ -547,7 +547,6 @@ p {
 	max-width: 100%;
 	width: 136.24px;
 	height: auto;
-
 	transform: scale(calc(100/3*2%));
 }
 
@@ -555,7 +554,7 @@ p {
 	width: 75px;
 	height: 75px;
 	margin: 0 auto;
-	background: conic-gradient(from -160.33deg at 66.66% 33.33%, rgb(247,27,27, 0), var(--color-red_main));
+	background: conic-gradient(from -160.33deg at calc(2/3*100%) calc(1/3*100%), rgb(247,27,27, 0), var(--color-red_main));
 	border-radius: 100%;
 	-webkit-border-radius: 100%;
 	-moz-border-radius: 100%;
