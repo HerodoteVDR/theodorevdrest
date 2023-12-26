@@ -7,8 +7,7 @@ alt: "Launch"
 date: Created 
 emoji: 🚀
 mood: https://open.spotify.com/embed/track/0QeI79sp1vS8L3JgpEO7mD?utm_source=generator
-smalldescription: "How I created this blog"
-
+smalldescription: "Purpose and features of this 11ty website"
 updated: false
 archived: false
 ---
