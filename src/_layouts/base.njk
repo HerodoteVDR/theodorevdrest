@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="device-width, initial-scale=1.0">
-	<title>{{ title }} - Theodore's blog</title>
+		<title>{{ title or renderData.title or metadata.title | escape }} - Theodore's blog</title>
+		<meta name="description" content="{{ "{smalldescription or renderData.smalldescription}" | escape }} />
+		<link rel="canonical" href="{{ "{page.url}" | escape }}">
+		<meta name="robots" content="index, follow" />
 		<link rel="stylesheet" href="/assets/css/main.css">
 		<link rel="stylesheet" href="/assets/css/prism.css">
 		<link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.png">
