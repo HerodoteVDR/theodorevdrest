@@ -11,6 +11,7 @@ smalltitle: "hello I'm Théodore, I like"
 bigtitle: "Creative multimedia experiences"
 smalldescription: "In a nutschell, I enjoy to create engaging and interactive digital stuff, through a variety of different medias, such as web, design, animation and video-games."
 bigdescription: "Enthusiasm, humour, adaptibility and a broad perspective shape my way of working"
+webdesc: "Théodore van der Rest's online place to post news and latest work."
 
 experiences:
   - title: 'Storytelling'

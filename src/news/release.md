@@ -7,7 +7,7 @@ alt: "Launch"
 date: Created 
 emoji: 🚀
 mood: https://open.spotify.com/embed/track/0QeI79sp1vS8L3JgpEO7mD?utm_source=generator
-smalldescription: "Purpose and features of this 11ty website"
+webdesc: "The purpose of this is blog is for Théodore van der Rest to have a place on the internet to post thoughts and works."
 updated: false
 archived: false
 ---
