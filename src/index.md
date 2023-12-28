@@ -5,8 +5,10 @@ importance: 5
 
 firstimage: "src/assets/img/home-banner.jpg"
 recenterA: "top"
+firstalt: "Théodore van der Rest"
 secondimage: "src/assets/img/home-home.jpg"
 recenterB: "top"
+secondalt: "Grange"
 smalltitle: "hello I'm Théodore, I like"
 bigtitle: "Creative multimedia experiences"
 smalldescription: "In a nutschell, I enjoy to create engaging and interactive digital stuff, through a variety of different medias, such as web, design, animation and video-games."

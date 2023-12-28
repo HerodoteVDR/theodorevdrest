@@ -81,7 +81,7 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSize, bigSize, recenter, rename) {
+	eleventyConfig.addShortcode("myImage", async function(src, alt, smallSize, midSize, bigSize, recenter) {
 		try {
 			if (!src) {
 				console.error(`Error: src is a required argument to the eleventy-img utility.`);
@@ -96,14 +96,16 @@ module.exports = function(eleventyConfig) {
 
 			const metadata = await Promise.all(
 				resizedImageBuffer.map(async buffer => {
-					return await Image(buffer, {
+					const newalt = alt.replace(/\s/g, "").toLowerCase();
+					const gImage = await Image(buffer, {
 						formats: ["webp"],
 						filenameFormat: function(id, src, width, format, options) {
-							return `${width}-${id}.${format}`;
+							return `${width}w.${format}`;
 						},
-						outputDir: `./dist/assets/img/output/`,
-						urlPath: `/assets/img/output/`,
+						outputDir: `./dist/assets/img/${newalt}`,
+						urlPath: `/assets/img/${newalt}`,
 					});
+					return gImage;
 				})
 			);
 

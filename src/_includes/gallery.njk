@@ -15,7 +15,7 @@
 					{% set bannerimg = work.data.image %}
 					{% set recenter = work.data.recenter %}
 					{% if bannerimg %}
-					<div class="l-gap__s@large l-padding__m@small l-padding__s@medium">
+					<div class="l-gap__s@large l-padding__m@small l-padding__m@medium">
 						<a target="_blank" href="https://{{ work.data.redirect }}">
 							{% myImage bannerimg, work.data.alt, [390, 300], [750, 375], [360, 360], recenter %}
 						</a>
