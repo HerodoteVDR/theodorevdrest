@@ -3,8 +3,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="device-width, initial-scale=1.0">
-		<title>{{ title or renderData.title or metadata.title | escape }} - Theodore's blog</title>
+		<title>{{ title or renderData.title or metadata.title | escape }} - Theodore van der Rest</title>
+		<meta name="author" content="Théodore van der Rest">
+		<meta name="owner" content="Théodore van der Rest">
+		<meta name="category" content="website">
+		<meta name="keywords" content="portfolio, HTML, CSS, JS, C#, dev, multimedia">
 		<meta name="description" content="{{ webdesc or renderData.webdesc}}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="canonical" href="https://www.theodorevdrest.com{{page.url}}">
 		<meta name="robots" content="index, follow"/>
 		<link rel="stylesheet" href="/assets/css/main.css">
